@@ -6,46 +6,43 @@ block content
   br
   form(action"", method="post")
     p first name: 
-    input(type="text", name"firstName")
+    input(type="text", name="name[firstName]", value=profile.name.firstName)
     br
     p last name: 
-    input(type="text", name"lastName")
+    input(type="text", name="name[lastName]", value=profile.name.lastName)
     br
     p preferred name: 
-    input(type="text", name"preferredName")
+    input(type="text", name="name[preferredName]", value=profile.name.preferredName)
     br
     p user name: 
-    input(type="text", name"userName")
+    input(type="text", name="username", value=profile.username)
     br
     p gender: 
-    input(type="text", name"gender")
+    input(type="text", name="demographics[gender]", value=profile.demographics.gender)
     br
     p age: 
-    input(type="text", name"age")
+    input(type="text", name="demographics[age]", value=profile.demographics.age)
     br
     p ethnicity: 
-    input(type="text", name"ethnicity")
+    input(type="text", name="demographics[ethnicity]", value=profile.demographics.ethnicity)
     br
     p address: 
-    input(type="text", name"address")
+    input(type="text", name="contact[address]", value=profile.contact.address)
     br
     p email: 
-    input(type="text", name"email")
+    input(type="text", name="contact[email]", value=profile.contact.email)
     br
     p phone: 
-    input(type="text", name"phone")
+    input(type="text", name="contact[phone]", value=profile.contact.phone)
     br
     p github: 
-    input(type="text", name"github")
+    input(type="text", name="social[github]", value=profile.social.github)
     br
     p facebook: 
-    input(type="text", name"facebook")
+    input(type="text", name="social[facebook]", value=profile.social.facebook)
     br
     p twitter: 
-    input(type="text", name"twitter")
-    br
-    p avatar: 
-    input(type="text", name"avatar")
+    input(type="text", name="social[twitter]" value=profile.social.twitter)
     br
     br
     input(type="submit")

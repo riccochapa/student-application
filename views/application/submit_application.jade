@@ -6,29 +6,11 @@ block content
   br
   form(action"", method="post")
   
-    p questionOne:
+    p application.questions:
       br
-      p a: 
-      input(type="text", name"responseOne")
+      p application.question.statement 
+      input(type="text", name"response")
       br 
-      p b:
-      input(type="text", name"responseIfOne")
-      br
-      
-    p questionTwo:
-      br
-      p a: 
-      input(type="text", name"responseTwo")
-      br
-      p b:
-      input(type="text", name"responseIfThree")
-      br
-      
-    p questionThree:
-      br
-      p a: 
-      input(type="text", name"responseThree")
-      br
-      p b:
-      input(type="text", name"responseIfThree")
+      p application.question.response
+      input(type="text", name"responseIf")
       br

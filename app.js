@@ -17,7 +17,6 @@ const MONGO_PASS = process.env.MONGO_DB_PASS;
 const MONGO_HOST = process.env.OPENSHIFT_MONGODB_DB_HOST;
 const MONGO_PORT = process.env.OPENSHIFT_MONGODB_DB_PORT;
 
-
 var mongoose = require('mongoose');
 if (MONGO_HOST) {
   mongoose.connect('mongodb://admin:' + MONGO_PASS + '@' + MONGO_HOST + ':' + MONGO_PORT + '/applications');
@@ -32,7 +31,6 @@ var admin = require('./routes/admin');
 var application = require('./routes/application');
 var profile = require('./routes/profile');
 
-
 var strategy = new Auth0Strategy({
     domain:       process.env.AUTH0_DOMAIN,
     clientID:     process.env.AUTH0_CLIENT_ID,
@@ -45,7 +43,6 @@ var strategy = new Auth0Strategy({
     return done(null, profile);
   });
 
-
 passport.use(strategy);
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -56,14 +53,13 @@ passport.deserializeUser(function(user, done) {
 
 var app = express();
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(session({
@@ -74,7 +70,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, './public')));
-
 
 app.use('/', routes);
 app.use('/user', user);
@@ -98,7 +93,6 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
 
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);

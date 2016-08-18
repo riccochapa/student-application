@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "what-to-eat",
   "version": "1.0.0",
   "description": "",
   "keywords": [],
@@ -8,9 +8,9 @@
     "start": "nodemon server.js"
   },
   "author": {
-    "name": "Ricco Chapa",
-    "email": "riccochapa@gmail.com",
-    "url": "http://github.com/riccochapa/"
+    "name": "Olmo Maldonado",
+    "email": "ibolmo@gmail.com",
+    "url": "http://github.com/ibolmo/"
   },
   "engines": {
     "node": ">= 0.6.0",
