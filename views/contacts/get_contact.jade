@@ -1,0 +1,17 @@
+//
+  extends ../layout
+
+  block content
+    h1 Checked Ins
+    img(src="#{user.picture}")
+    h2 Welcome #{user.nickname}!
+    br
+    ul
+      li
+        each person in contact.contact
+          p
+            a(href="/contacts/#{contact._id}")= 'Edit'
+            ,#{person.name}, #{person.phone}, #{person.email}
+    br
+    a(href='/user') Home
+  //        

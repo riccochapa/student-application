@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+  h1 submit_application.jade
+  h3 Username #{user.nickname}
+  br
+  form(action"", method="post")
+  
+    p questionOne:
+      br
+      p a: 
+      input(type="text", name"responseOne")
+      br 
+      p b:
+      input(type="text", name"responseIfOne")
+      br
+      
+    p questionTwo:
+      br
+      p a: 
+      input(type="text", name"responseTwo")
+      br
+      p b:
+      input(type="text", name"responseIfThree")
+      br
+      
+    p questionThree:
+      br
+      p a: 
+      input(type="text", name"responseThree")
+      br
+      p b:
+      input(type="text", name"responseIfThree")
+      br

@@ -1,0 +1,30 @@
+//
+  extends ../layout
+
+  block content
+    h1 Checked In
+    h3 Create New Contact
+    br  
+    form(action="", method="post")
+      p Name:
+      input(type="text", name="name")
+      br
+      br
+      p Phone:
+      input(type="text", name="phone")
+      br
+      br
+      p Email:
+      input(type="text", name="email")
+      br
+      br
+      input(type="submit")
+    br
+    br
+    a(href='/settings') Contact Settings
+    br
+    a(href='/alertsettings') Alert Settings
+    br
+    a(href='/user') Home
+    br
+//

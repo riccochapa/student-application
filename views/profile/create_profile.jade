@@ -1,0 +1,54 @@
+extends ../layout
+
+block content
+  h1 add_profile_information.jade
+  h3 username #{user.nickname}
+  br
+  form(action"", method="post")
+    p first name: 
+    input(type="text", name"firstName")
+    br
+    p last name: 
+    input(type="text", name"lastName")
+    br
+    p preferred name: 
+    input(type="text", name"preferredName")
+    br
+    p user name: 
+    input(type="text", name"userName")
+    br
+    p gender: 
+    input(type="text", name"gender")
+    br
+    p age: 
+    input(type="text", name"age")
+    br
+    p ethnicity: 
+    input(type="text", name"ethnicity")
+    br
+    p address: 
+    input(type="text", name"address")
+    br
+    p email: 
+    input(type="text", name"email")
+    br
+    p phone: 
+    input(type="text", name"phone")
+    br
+    p github: 
+    input(type="text", name"github")
+    br
+    p facebook: 
+    input(type="text", name"facebook")
+    br
+    p twitter: 
+    input(type="text", name"twitter")
+    br
+    p avatar: 
+    input(type="text", name"avatar")
+    br
+    br
+    input(type="submit")
+    
+    
+    

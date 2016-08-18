@@ -1,0 +1,26 @@
+//
+  extends ../layout
+
+  block content
+    h1 Checked In
+    h3 Saved contacts for #{user.nickname}
+    br
+    each contact in contacts
+      each person in contact.contact
+        li #{person.name} #{person.phone} #{person.email}
+        br
+        a(href="/contacts/#{contact.id}/remove_contact")
+          button Delete
+        a(href="/contacts/#{contact._id}")
+          button Edit               
+        p    
+    br
+    br
+    a(href='/User') Home
+    br
+    a(href='/settings') Contact Settings
+    br
+    a(href='/alertsettings') Alert Settings
+    br
+    a(href='/logout') Logout
+//
