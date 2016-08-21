@@ -4,9 +4,10 @@ block content
   h1 profile index.jade
   h3 username #{user.nickname}
   br
-  ul
-    li #{profile.name}
+  dt name
+  dd #{profile.name.firstName} #{profile.name.lastName} 
+  br
 
+
+   
   a(href='/profile/create_profile') create_profile
-
-  

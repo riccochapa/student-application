@@ -23,4 +23,30 @@
     a(href='/alertsettings') Alert Settings
     br
     a(href='/logout') Logout
+    
+    
+    
+    
+    ul  
+    each key in Object.keys(profile)
+      if typeof profile[key] != 'object'
+        p=key
+        pre=profile[key]  
+      else
+        each k in Object.keys(profile[key])
+          p=k
+          pre=profile[key][k]
+          
+          dl
+            dt username
+            dd=profile.username
+            
+            dt First name
+            dd=profile.name.firstName
+                  
+          
+          
+    br  
+    br  
+    br 
 //

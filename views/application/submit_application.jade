@@ -4,13 +4,34 @@ block content
   h1 submit_application.jade
   h3 Username #{user.nickname}
   br
-  form(action"", method="post")
-  
+  form(action"", method="post")  
     p application.questions:
-      br
-      p application.question.statement 
-      input(type="text", name"response")
-      br 
-      p application.question.response
-      input(type="text", name"responseIf")
-      br
+    br
+    br
+    br
+    p application.question.statement
+    p  
+    input(type="text", placeholder="application.question.response", name="response")
+    br
+    br 
+    p application.question.statement 
+    p 
+    input(type="text", placeholder="application.question.responseIf", name="responseIf")
+    br
+    br
+    p application.question.statement 
+    p 
+    input(type="text", placeholder="application.question.responseIf", name="responseIf")
+    br
+    br
+    p application.question.statement 
+    p 
+    input(type="text", placeholder="application.question.responseIf", name="responseIf")
+    br
+    br
+    p application.question.statement 
+    p 
+    input(type="text", placeholder="application.question.responseIf", name="responseIf")
+    br
+    br
+    input(type="submit")
