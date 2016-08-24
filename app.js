@@ -30,6 +30,7 @@ var home = require('./routes/home');
 var admin = require('./routes/admin');
 var application = require('./routes/application');
 var profile = require('./routes/profile');
+var questions = require('./routes/questions');
 
 var strategy = new Auth0Strategy({
     domain:       process.env.AUTH0_DOMAIN,
@@ -37,9 +38,6 @@ var strategy = new Auth0Strategy({
     clientSecret: process.env.AUTH0_CLIENT_SECRET,
     callbackURL:  process.env.AUTH0_CALLBACK_URL
   }, function(accessToken, refreshToken, extraParams, profile, done) {
-    // accessToken is the token to call Auth0 API (not needed in the most cases)
-    // extraParams.id_token has the JSON Web Token
-    // profile has all the information from the user
     return done(null, profile);
   });
 
@@ -58,7 +56,6 @@ app.set('view engine', 'jade');
 
 
 app.use(logger('dev'));
-//app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
@@ -71,12 +68,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, './public')));
 
+
 app.use('/', routes);
 app.use('/user', user);
 app.use('/home', home);
 app.use('/admin', admin)
 app.use('/application', application);
 app.use('/profile', profile);
+app.use('/questions', questions);
+
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

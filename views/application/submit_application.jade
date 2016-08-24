@@ -4,34 +4,4 @@ block content
   h1 submit_application.jade
   h3 Username #{user.nickname}
   br
-  form(action"", method="post")  
-    p application.questions:
-    br
-    br
-    br
-    p application.question.statement
-    p  
-    input(type="text", placeholder="application.question.response", name="response")
-    br
-    br 
-    p application.question.statement 
-    p 
-    input(type="text", placeholder="application.question.responseIf", name="responseIf")
-    br
-    br
-    p application.question.statement 
-    p 
-    input(type="text", placeholder="application.question.responseIf", name="responseIf")
-    br
-    br
-    p application.question.statement 
-    p 
-    input(type="text", placeholder="application.question.responseIf", name="responseIf")
-    br
-    br
-    p application.question.statement 
-    p 
-    input(type="text", placeholder="application.question.responseIf", name="responseIf")
-    br
-    br
-    input(type="submit")
+  iframe(width='560', height='315', src='http://localhost:8080/questions', frameborder='0', allowfullscreen='')
