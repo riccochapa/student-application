@@ -1,7 +1,14 @@
 extends ../layout
 
 block content
-  h1 question number.jade
-  h3 username #{user.nickname}
+  h1 #{question.number} number.jade
   br
-  a(href='/:number') begin
+  form(action"", method="post")
+    br
+    p #{question.statement}
+    input(type="text", name="questions[response]")
+    br
+    br
+    input(type="submit")
+  br
+  a(href='/questions/#{question.number + 1}') questions.number = #{question.number + 1}
