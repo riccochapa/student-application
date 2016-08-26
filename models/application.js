@@ -4,14 +4,6 @@ var mongoose = require("mongoose");
       id: {type: String, index: {unique: true }},
       term: String,
       score: Number,
-      questions: [{
-        number: String,
-        statement: String,
-        response: String,
-        responseIf: String,
-        type: String,
-        required: Boolean
-      }],
       applicationNotes: {type: String, required: false},
   });
 

@@ -6,8 +6,11 @@ block content
   form(action"", method="post")
     br
     p #{question.statement}
-    input(type="text", name="questions[response]")
+    input(type="text", name="question[statement]", value=question.statement)
     br
+    input(type="text", name="question[number]", value=question.number)
+    br
+    input(type="text", name="question[response]")
     br
     input(type="submit")
   br
