@@ -5,13 +5,17 @@ block content
     br
     form(action"", method="post")
         br
-        p #{question.statement}
+        p #{question.statement}  
+        input(type="text", name="id", value=user.id)
+        br
         input(type="text", name="statement", value=question.statement)
         br
         input(type="text", name="number", value=question.number)
         br
         input(type="text", name="response")
         br
+        input(type="text", name="responseIf")
+        br
         input(type="submit")
     br
-    a(href='/questions/#{question.number + 1}') questions.number = #{question.number + 1}
+    a(href='/questionaire/#{question.number + 1}') questions.number = #{question.number + 1}
