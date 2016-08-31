@@ -16,19 +16,7 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     });
 });
 
-router.get('/create_profile', ensureLoggedIn, function(req, res, next) {
-    Profile.findOne({
-        id: req.user.id
-    }, function(err, profile) {
-        res.render('profile/create_profile', {
-            profile: profile,
-            user: req.user
-        });
-    });
-});
-
-router.post('/create_profile', ensureLoggedIn, function(req, res, next) {
-
+router.post('/', ensureLoggedIn, function(req, res, next) {
     Profile.findOne({
         id: req.user.id
     }, function(err, profile) {
@@ -43,24 +31,23 @@ router.post('/create_profile', ensureLoggedIn, function(req, res, next) {
         }
         profile.save(function(err) {
             if (err) return next(err);
-            res.redirect('profile/profile_details');
+            res.redirect('/profile/create');
         });
     });
-
 });
 
-router.get('/profile_details', ensureLoggedIn, function(req, res, next) {
+router.get('/create', ensureLoggedIn, function(req, res, next) {
     Profile.findOne({
         id: req.user.id
     }, function(err, profile) {
-        res.render('profile/profile_details', {
+        res.render('profile/create', {
             profile: profile,
             user: req.user
         });
     });
 });
 
-router.post('/profile_details', ensureLoggedIn, function(req, res, next) {
+router.post('/create', ensureLoggedIn, function(req, res, next) {
 
     Profile.findOne({
         id: req.user.id

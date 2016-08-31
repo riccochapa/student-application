@@ -14,7 +14,8 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     }, function(err, questionaire) {
         res.render('questionaire/index', {
             user: req.user,
-            questions: questions
+            questionaire: questionaire,
+            questions: questions,
         });
     });
 
@@ -24,59 +25,51 @@ router.get('/:number', ensureLoggedIn, function(req, res, next) {
     var questionNumber = req.params.number;
     var questions = questionJSON.questions;
     var question = questions[questionNumber - 1];
-    var nextQuestion = questions[questionNumber + 1];
     var statement = questions.statement;
-    var keywords = questions.key_words;
+    var number = questions.number;
+    var keywords = questions.keywords;
     var image = questions.image;
 
     Questionaire.findOne({
         id: req.user.id
     }, function(err, questionaire) {
-        if (question >= 1 && question <= 6) return;
+        if (question >= 1 && question <= 11) return;
         res.render('questionaire/number', {
-            user: req.user,
+            questionaire: questionaire,
             questions: questions,
             statement: statement,
             question: question,
             keywords: keywords,
+            number: number,
             image: image,
-            nextQuestion: nextQuestion
+            user: req.user
         });
     });
-
 });
 
 router.post('/:number', ensureLoggedIn, function(req, res, next) {
+  var questionNumber = req.params.number;
+  var questions = questionJSON.questions;
+  var question = questions[questionNumber - 1];
+  var statement = questions.statement;
+  var number = questions.number;
+  var keywords = questions.key_words;
+  var image = questions.image;
 
-    Questionaire.findOne({
+    Questionaire.findOneAndUpdate({
         id: req.user.id
-    }, function(err, questionaire) {
-        var question = new Questionaire({
-            id: req.user.id,
-            question: [{
-                number: req.body.number,
-                statement: req.body.statement,
-                response: req.body.response,
-                responseIf: req.body.responseIf,
-            }],
-        });
-    });
-
-    var question = new Questionaire({
-        id: req.user.id,
-        question: [{
-            number: req.body.number,
-            statement: req.body.statement,
-            response: req.body.response,
-            responseIf: req.body.responseIf,
-        }],
-    });
-
-    question.save(function(err) {
+    }, { $push: { question: {
+          "number": question.number,
+          "statement": question.statement,
+          "response": req.body.response,
+          "responseIf": req.body.responseIf
+        }}}, { upsert : true },
+    function(err, questionaire) {
         if (err) return next(err);
-        res.redirect('/questionaire/' + req.body.number);
-    });
-
+        res.redirect('/questionaire/' + [question.number + 1]);
+      });
 });
+
+
 
 module.exports = router;

@@ -16,18 +16,18 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     });
 });
 
-router.get('/submit_application', ensureLoggedIn, function(req, res, next) {
+router.get('/submit', ensureLoggedIn, function(req, res, next) {
     Application.findOne({
         id: req.user.id
     }, function(err, application) {
-        res.render('application/submit_application', {
+        res.render('application/submit', {
             application: application,
             user: req.user
         });
     });
 });
 
-router.post('/submit_application', ensureLoggedIn, function(req, res, next) {
+router.post('/submit', ensureLoggedIn, function(req, res, next) {
 
     Application.findOne({
         id: req.user.id

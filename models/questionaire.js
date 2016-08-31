@@ -1,15 +1,11 @@
 var mongoose = require("mongoose");
 
 var questionSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        index: {
-            unique: true
-        }
-    },
+    id: { type: String, index: { unique: true }},
     question: [{
         number: {
-            type: String
+            type: String,
+            index: { unique: true }
         },
         statement: {
             type: String

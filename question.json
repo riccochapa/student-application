@@ -1,29 +1,81 @@
 {
     "questions": [{
-        "statement": "hello grandma",
+        "statement": "Are you free of work and other study commitments for the duration of the program?",
         "number": 1,
-        "key_words": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
         "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
-    }, {
-        "statement": "Question: Two",
+
+      }, {
+        "statement": "If you answered no to the previous question, briefly describe your other commitments.",
         "number": 2,
-        "key_words": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
-        "response": "Answer to question",
-        "responseIf": "Answer to question if",
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
         "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
-    }, {
-        "statement": "Question: Three",
+      }, {
+        "statement": "What is the highest level of school you have completed or the highest degree you have received?",
         "number": 3,
-        "key_words": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
-        "response": "Answer to question",
-        "responseIf": "Answer to question if",
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
         "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
     }, {
-        "statement": "Question: Four",
+        "statement": "Which of the following categories best describes your employment status?",
         "number": 4,
-        "key_words": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
-        "response": "Answer to question",
-        "responseIf": "Answer to question if",
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+    }, {
+        "statement": "What is the primary language spoken at home?",
+        "number": 5,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+      }, {
+        "statement": "Why are you applying to the (boot) Bootcamp?",
+        "number": 6,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+      }, {
+        "statement": "Tell us about your professional/educational career to date. What are you up to now and how did you end up there?",
+        "number": 7,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+      }, {
+        "statement": "Describe your background with computer programming. Please be as detailed as possible. Feel free to include links to any applications you've built, courses you've completed, etc... ",
+        "number": 8,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+        }, {
+        "statement": "The ability to think in a structured way, both creatively and quantitatively, to solve complex problems is an important element of being a successful developer. Can you tell us anything that demonstrates your abilities in that realm? (anything from standardized test scores to experience playing a musical instrument counts)",
+        "number": 9,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+        }, {
+        "statement": "The 'C' in CSS stands for?",
+        "number": 10,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
+        "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
+        }, {
+        "statement": "Is there anything else you'd like us to know?",
+        "number": 11,
+        "keywords": ["Javascript", "HTML", "CSS", "Whatever", "Whatever", "Whatever", "aaand", "Whatever"],
+        "response": "Placeholder text for response",
+        "responseIf": "Placeholder text for responseIf",
         "image": "to_be_used_for_questions_with_problems_to_solve.jpg"
     }]
 }

@@ -3,19 +3,11 @@ extends ../layout
 block content
     h1 #{question.number} number.jade
     br
-    form(action"", method="post")
+    form(method="post")
+        value(type="text", name="id", value=user.id)
         br
         p #{question.statement}  
-        input(type="text", name="id", value=user.id)
-        br
-        input(type="text", name="statement", value=question.statement)
-        br
-        input(type="text", name="number", value=question.number)
-        br
         input(type="text", name="response")
         br
-        input(type="text", name="responseIf")
-        br
+        br.
         input(type="submit")
-    br
-    a(href='/questionaire/#{question.number + 1}') questions.number = #{question.number + 1}

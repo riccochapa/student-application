@@ -3,6 +3,8 @@ extends ../layout
 block content
     h1 profile index.jade
     h3 username #{user.nickname}
-    br
-    br   
-    a(href='/profile/create_profile') create_profile
+    br    
+    form(action"", method="post")
+        value(type="text", name="id", value=user.id)
+        br
+        input(type="submit", value="manage profile")

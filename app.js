@@ -25,7 +25,6 @@ if (MONGO_HOST) {
 }
 
 var routes = require('./routes/index');
-var user = require('./routes/user');
 var home = require('./routes/home');
 var admin = require('./routes/admin');
 var application = require('./routes/application');
@@ -72,7 +71,6 @@ app.use(express.static(path.join(__dirname, './public')));
 
 
 app.use('/', routes);
-app.use('/user', user);
 app.use('/home', home);
 app.use('/admin', admin)
 app.use('/application', application);

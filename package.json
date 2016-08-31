@@ -1,49 +1,49 @@
 {
-    "name": "student-application",
-    "version": "1.0.0",
-    "description": "",
-    "keywords": [],
-    "private": true,
-    "scripts": {
-        "start": "nodemon server.js"
-    },
-    "author": {
-        "name": "Ricco Chapa",
-        "email": "riccochapa@gmail.com",
-        "url": "http://github.com/riccochapa/"
-    },
-    "engines": {
-        "node": ">= 0.6.0",
-        "npm": ">= 1.0.0"
-    },
-    "dependencies": {
-        "body-parser": "~1.15.1",
-        "connect-ensure-login": "^0.1.1",
-        "cookie-parser": "~1.4.3",
-        "debug": "^2.2.0",
-        "dotenv": "^2.0.0",
-        "eventemitter": "^0.3.3",
-        "express": "^4.14.0",
-        "express-session": "^1.14.0",
-        "jade": "~1.11.0",
-        "method-override": "^2.3.6",
-        "mongoose": "^4.5.4",
-        "morgan": "~1.7.0",
-        "passport": "^0.2.2",
-        "passport-auth0": "^0.5.2",
-        "passport-http": "^0.3.0",
-        "passport-local": "^1.0.0",
-        "serve-favicon": "~2.3.0",
-        "session": "^0.1.0",
-        "twilio": "^2.9.1"
-    },
-    "devDependencies": {
-        "express-livereload": "0.0.24",
-        "gulp": "^3.9.1",
-        "gulp-livereload": "^3.8.1",
-        "gulp-nodemon": "^2.1.0",
-        "gulp-wait": "0.0.2"
-    },
-    "bundleDependencies": [],
-    "main": "server.js"
+  "name": "student-application",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "private": true,
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": {
+    "name": "Ricco Chapa",
+    "email": "riccochapa@gmail.com",
+    "url": "http://github.com/riccochapa/"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "^2.2.0",
+    "dotenv": "^2.0.0",
+    "eventemitter": "^0.3.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.4",
+    "morgan": "~1.7.0",
+    "passport": "^0.2.2",
+    "passport-auth0": "^0.5.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-beta6",
+    "serve-favicon": "~2.3.0",
+    "session": "^0.1.0",
+    "twilio": "^2.9.1"
+  },
+  "devDependencies": {
+    "express-livereload": "0.0.24",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-wait": "0.0.2"
+  },
+  "bundleDependencies": [],
+  "main": "server.js"
 }

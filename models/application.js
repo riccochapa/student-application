@@ -1,17 +1,11 @@
 var mongoose = require("mongoose");
 
 var applicationSchema = new mongoose.Schema({
-    id: {
-        type: String,
-        index: {
-            unique: true
-        }
-    },
+    user_id: String,
     term: String,
     score: Number,
-    applicationNotes: {
-        type: String
-    }
+    notes: String,
+    questions: [Object]
 });
 
 module.exports = mongoose.model('Application', applicationSchema);
