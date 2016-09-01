@@ -18,7 +18,33 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
             questions: questions,
         });
     });
+});
 
+router.get('/submit', ensureLoggedIn, function(req, res, next) {
+
+    Questionaire.findOne({
+        id: req.user.id,
+    }, function(err, questionaire, question, response) {
+        res.render('questionaire/submit', {
+            user: req.user,
+            questionaire: questionaire,
+            question: question,
+            response: response
+        });
+    });
+});
+
+router.get(':id', ensureLoggedIn, function(req, res, next){
+  Questionaire.findOne({
+    // ?????
+  }, function(err, questionaire, question, response){
+    if (err) return next(err);
+    res.render('questionaire/edit', {
+      questionaire: questionaire,
+      question: question,
+      response: response,
+    });
+  });
 });
 
 router.get('/:number', ensureLoggedIn, function(req, res, next) {
@@ -33,7 +59,9 @@ router.get('/:number', ensureLoggedIn, function(req, res, next) {
     Questionaire.findOne({
         id: req.user.id
     }, function(err, questionaire) {
-        if (question >= 1 && question <= 11) return;
+        if (!question)
+        res.redirect('/questionaire/submit');
+        else
         res.render('questionaire/number', {
             questionaire: questionaire,
             questions: questions,
@@ -69,7 +97,6 @@ router.post('/:number', ensureLoggedIn, function(req, res, next) {
         res.redirect('/questionaire/' + [question.number + 1]);
       });
 });
-
 
 
 module.exports = router;

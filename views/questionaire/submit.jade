@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    h1 submit.jade
+    h3 username #{user.nickname}
+    h4 application complete
+    each response in questionaire.question
+      ul
+      li #{response.number} #{response.response} #{response._id}
+        a(href='/questionaire/#{response.number}')
+          button edit

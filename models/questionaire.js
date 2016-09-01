@@ -4,8 +4,7 @@ var questionSchema = new mongoose.Schema({
     id: { type: String, index: { unique: true }},
     question: [{
         number: {
-            type: String,
-            index: { unique: true }
+            type: String
         },
         statement: {
             type: String

@@ -8,10 +8,7 @@ var profileSchema = new mongoose.Schema({
         }
     },
     username: {
-        type: String,
-        index: {
-            unique: true
-        }
+        type: String
     },
     joined: {
         type: Number
@@ -40,7 +37,7 @@ var profileSchema = new mongoose.Schema({
     },
     contact: {
         phone: {
-            type: Number
+            type: String
         },
         email: {
             type: String

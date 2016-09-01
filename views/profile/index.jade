@@ -4,7 +4,4 @@ block content
     h1 profile index.jade
     h3 username #{user.nickname}
     br    
-    form(action"", method="post")
-        value(type="text", name="id", value=user.id)
-        br
-        input(type="submit", value="manage profile")
+    a(href='/profile/manage') manage profile
