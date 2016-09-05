@@ -3,5 +3,18 @@ extends ../layout
 block content
     h1 profile index.jade
     h3 username #{user.nickname}
-    br    
-    a(href='/profile/manage') manage profile
+    br
+    p name: #{profile.name.firstName} #{profile.name.lastName}
+    p prefferred name: #{profile.name.prefferredName} 
+    br
+    p address: #{profile.contact.address}
+    p email: #{profile.contact.email}
+    p phone: #{profile.contact.phone}
+    br
+    p github: #{profile.contact.github}
+    p facebook: #{profile.contact.facebook}
+    p twitter: #{profile.contact.twitter}
+    br     
+    a(href='/profile/edit') edit profile
+    br     
+    a(href='/home') home

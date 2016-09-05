@@ -31,7 +31,7 @@ router.post('/', ensureLoggedIn, function(req, res, next) {
         }
         profile.save(function(err) {
             if (err) return next(err);
-            res.redirect('/profile/manage');
+            res.redirect('/profile/edit');
         });
     });
 });
@@ -63,24 +63,24 @@ router.post('/create', ensureLoggedIn, function(req, res, next) {
         }
         profile.save(function(err) {
             if (err) return next(err);
-            res.redirect('/profile/manage');
+            res.redirect('/profile/edit');
         });
     });
 
 });
 
-router.get('/manage', ensureLoggedIn, function(req, res, next) {
+router.get('/edit', ensureLoggedIn, function(req, res, next) {
     Profile.findOne({
         id: req.user.id
     }, function(err, profile) {
-        res.render('profile/manage', {
+        res.render('profile/edit', {
             profile: profile,
             user: req.user
         });
     });
 });
 
-router.post('/manage', ensureLoggedIn, function(req, res, next) {
+router.post('/edit', ensureLoggedIn, function(req, res, next) {
 
     Profile.findOne({
         id: req.user.id

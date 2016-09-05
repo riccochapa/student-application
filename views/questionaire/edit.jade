@@ -2,3 +2,8 @@ extends ../layout
 
 block content
   h1 edit.jade
+  p #{statement}
+   form(method="post")
+     input(type="text", name="response", value="#{response}")
+     br
+     input(type="submit")

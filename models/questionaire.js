@@ -12,7 +12,7 @@ var questionSchema = new mongoose.Schema({
         response: {
             type: String
         },
-        responseIf: {
+        user: {
             type: String
         },
     }],
