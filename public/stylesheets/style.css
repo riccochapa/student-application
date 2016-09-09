@@ -1,6 +1,174 @@
-body {
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+    font-family: 'Jura', font: 14px;
     text-align: center;
-    font-family: sans-serif;
     font-weight: 100;
+    background-color: black;
+    padding: 2%;
+    color: #FFF;
+}
+
+#applications{
+  color: #FFF;
+}
+
+#profile{
+  text-align: center;
+  width: 50%;
+  position: sticky;
+  background-color: black;
+  color: #FFF;
+}
+
+#questionaire{
+  color: #000;
+}
+
+#profilebutton{
+  width: 66.6%;
+}
+
+#begin{
+  color:  blue;
+}
+
+#application{
+  padding: 3%;
+}
+
+#submit{
+  width: 100%;
+  color: #000;
+}
+
+#status{
+  padding: 13%;
+}
+
+#words{
+  background:#141414;
+  overflow:hidden;
+}
+
+#reviewmain{
+  padding: 5%;
+}
+
+#review{
+  width: 25%;
+}
+
+.well{
+  width: 20%;
+  text-align: left;
+}
+
+.navbar{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  background-color: transparent;
+  z-index: 9999;
+  border: 0;
+  font-size: 18px;
+  line-height: 1.42857143;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: 'Jura', sans-serif;
+  padding-right: 3%;
+  padding-left: 3%;
+  height: 18px;
+  color: #FFF;
+}
+
+.navbar li a, .navbar .navbar-brand {
+  color: #FFF;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+  color: #FFF;
+  background-color: transparent;;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  color: transparent;;
+}
+
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+}
+.slideanim {visibility:hidden;}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+.slide#slow {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 3s;
+    -webkit-animation-duration: 4s;
+    visibility: visible;
+}
+.slow {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 10s;
+    -webkit-animation-duration: 7s;
+    visibility: visible;
+}
+.easy {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 10s;
+    -webkit-animation-duration: 7s;
+    visibility: visible;
+}
+
+.slide#edit {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 3s;
+    -webkit-animation-duration: 4s;
+    visibility: visible;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+@media screen and (max-width: 768px) {
+  .col-sm-4 {
+    text-align: center;
+    margin: 25px 0;
+  }
+  .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .logo {
+      font-size: 150px;
+  }
 }

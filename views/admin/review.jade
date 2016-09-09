@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  h1 applicant review
+  br
+  br
+  each section in profile
+    dl
+      h3 #{section.name.preferredName} 
+      dt #{section.name.firstName} #{section.name.lastName}
+      br
+      br
+      dt #{section.contact.phone}
+      dt #{section.contact.email} 
+      dt #{section.contact.address} 
+      br
+      br
+      dt #{section.social.github}
+      dt #{section.social.facebook} 
+      dt #{section.social.twitter}
+      br
+      br
+      dt #{section.demographics.age} 
+      dt #{section.demographics.gender} 
+      dt #{section.demographics.ethnicity} 
+      br
+      br
+    each responses in questionaire
+      each detail in responses.question
+        h4 #{detail.statement}
+        br
+        ul #{detail.response}
+        br
+        br
+        br
+    a.btn.btn-primary(href='/admin/accepted/#{section.id}') ACCEPTED
+    a.btn.btn-warning(href='/admin/waitlisted/#{section.id}') WAITLIST
+    a.btn.btn-danger(href='/admin/alternative/#{section.id}') ALTERNATIVE   

@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "bootstrap": "^3.3.7",
     "connect-ensure-login": "^0.1.1",
     "cookie-parser": "~1.4.3",
     "debug": "^2.2.0",
@@ -35,8 +36,7 @@
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
-    "session": "^0.1.0",
-    "twilio": "^2.9.1"
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "express-livereload": "0.0.24",

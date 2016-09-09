@@ -1,9 +1,16 @@
 extends ../layout
 
 block content
-  h1 edit.jade
-  p #{statement}
-   form(method="post")
-     input(type="text", name="response", value="#{response}")
+  div
+    br
+    br
+    br
+    h3 #{statement}
      br
-     input(type="submit")
+     br
+     br
+     form(method="post")
+       input.input.group(type="text", class="form-control", name="response", value="#{response}")
+       br
+       br
+       input.btn.btn-default#profilebutton(type="submit")

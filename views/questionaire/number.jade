@@ -1,13 +1,16 @@
 extends ../layout
 
-block content
-    h1 #{question.number} number.jade
+block content  
+  div 
     br
     form(method="post")
         value(type="text", name="id", value=user.id)
         br
-        p #{question.statement}  
-        input(type="text", name="response")
+        h1 #{question.statement}
         br
-        br.
-        input(type="submit")
+        br
+        .form-group
+          textarea#comment.form-control(rows='5', name="response") 
+        br
+        br
+        input.btn.btn-default#profilebutton(type="submit")

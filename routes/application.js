@@ -16,38 +16,15 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     });
 });
 
-router.get('/submit', ensureLoggedIn, function(req, res, next) {
+router.get('/status', ensureLoggedIn, function(req, res, next) {
     Application.findOne({
         id: req.user.id
     }, function(err, application) {
-        res.render('application/submit', {
+        res.render('application/status', {
             application: application,
             user: req.user
         });
     });
 });
-
-router.post('/submit', ensureLoggedIn, function(req, res, next) {
-
-    Application.findOne({
-        id: req.user.id
-    }, function(err, application) {
-        if (err) return next(err);
-
-        if (!application) application = new Application({
-            id: req.user.id
-        });
-
-        for (let prop in req.body) {
-            application[prop] = req.body[prop];
-        }
-        application.save(function(err) {
-            if (err) return next(err);
-            res.redirect('/application')
-        });
-    });
-
-});
-
 
 module.exports = router;

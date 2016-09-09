@@ -1,0 +1,67 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='boot student application')
+    meta(name='author', content='@riccochapa')
+    link(rel="icon" href="/favicon.ico")
+    title codergv boot
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa' crossorigin='anonymous')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Jura', rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/cover.css')
+    script(src='https://cdn.auth0.com/js/lock/10.0/lock.min.js')
+    
+  body
+  block content
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .masthead.clearfix
+            .inner
+            nav.nav.nav-masthead
+              a.nav-link.active(href='/') 
+                i.fa.fa-desktop(aria-hidden="true")        
+              a.nav-link(href='/boot') what is (boot)?
+              a.nav-link(href='/codergv') what is code[rgv]?
+
+        .inner.cover
+          h1.cover-heading what is code[rgv]?
+          p.lead
+            h3 code[rgv] is a nonprofit dedicated to infusing the one of a kind culture, values and spirit of the rio grande valley into the tech scene. end game being launching the rgv into a relevant contributor within the tech sector.
+          p.lead
+          
+          a.btn.btn-lg.btn-default(onclick="signin()") apply
+   
+            script.
+              var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}', { auth: {
+                    redirectUrl: '#{env.AUTH0_CALLBACK_URL}'
+                  , responseType: 'code'
+                  , params: {
+                    scope: 'openid name email picture'
+                  }
+                }});
+              function signin() {
+                lock.show();
+              }
+              
+          .mastfoot
+          
+              footer.footer
+                .container
+                  span.text-muted 
+                    i.fa.fa-github    
+                    |             
+                    i.fa.fa-twitter    
+                    |              
+                    i.fa.fa-facebook
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js', integrity='sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')
+    script(src='js/bootstrap.min.js')
+    script(src='../../assets/js/ie10-viewport-bug-workaround.js')

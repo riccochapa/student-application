@@ -1,0 +1,10 @@
+extends ../layout
+
+block content
+  h1 waitlisted applicants
+  br
+  br
+  each section in profile
+    dl
+      h3 #{section.name.firstName} #{section.name.lastName}
+      br

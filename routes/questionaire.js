@@ -3,7 +3,6 @@ var passport = require('passport');
 var express = require('express');
 var questionJSON = require('../question.json');
 var router = express.Router();
-
 var Questionaire = require('../models/questionaire.js');
 
 router.get('/', ensureLoggedIn, function(req, res, next) {
@@ -37,6 +36,17 @@ router.get('/submit', ensureLoggedIn, function(req, res, next) {
     });
 });
 
+router.get('/completed', ensureLoggedIn, function(req, res, next) {
+    Questionaire.findOne({
+      id: req.user.id,
+    }, function(err, questionaire, question, response) {
+        res.render('questionaire/completed', {
+            user: req.user,
+            questionaire: questionaire,
+        });
+    });
+});
+
 router.get('/:number', ensureLoggedIn, function(req, res, next) {
   var questionNumber = req.params.number;
   var questions = questionJSON.questions;
@@ -50,7 +60,7 @@ router.get('/:number', ensureLoggedIn, function(req, res, next) {
       id: req.user.id
     }, function(err, questionaire) {
         if (!question)
-        res.redirect('/questionaire/submit');
+        res.redirect('/questionaire/completed');
         else
         res.render('questionaire/number', {
           questionaire: questionaire,
@@ -88,7 +98,6 @@ router.post('/:number', ensureLoggedIn, function(req, res, next) {
     });
 });
 
-
 router.get('/edit/:num', ensureLoggedIn, function(req, res, next) {
   var num = req.params.num;
 
@@ -105,7 +114,6 @@ router.get('/edit/:num', ensureLoggedIn, function(req, res, next) {
     });
 });
 
-
 router.post('/edit/:num', ensureLoggedIn, function(req, res, next) {
   var num = req.params.num;
 
@@ -116,6 +124,5 @@ router.post('/edit/:num', ensureLoggedIn, function(req, res, next) {
       res.redirect('/questionaire/submit');
     });
 });
-
 
 module.exports = router;

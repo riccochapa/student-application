@@ -1,6 +1,16 @@
 extends ../layout
 
 block content
-    h1 admin.jade
+  div#applications
     br
-    | portal goes here
+    h1 fall applications
+    br
+    each applicant in profile
+      dl
+        dt #{applicant.name.firstName}
+        dd #{applicant.name.lastName}
+        br
+        a.btn.btn-xs.btn-success(href='/admin/review/#{applicant.id}') REVIEW
+        br
+        br
+        br

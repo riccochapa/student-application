@@ -1,48 +1,56 @@
 extends ../layout
 
 block content
-    h1 create.jade
-    h3 username #{user.nickname}
-    br
-    form(action"", method="post")
-        p first name: 
-        input(type="text", name="name[firstName]", value=profile.name.firstName)
-        br
-        p last name: 
-        input(type="text", name="name[lastName]", value=profile.name.lastName)
-        br
-        p preferred name: 
-        input(type="text", name="name[preferredName]", value=profile.name.preferredName)
-        br
-        p user name: 
-        input(type="text", name="username", value=profile.username)
-        br
-        p gender: 
-        input(type="text", name="demographics[gender]", value=profile.demographics.gender)
-        br
-        p age: 
-        input(type="text", name="demographics[age]", value=profile.demographics.age)
-        br
-        p ethnicity: 
-        input(type="text", name="demographics[ethnicity]", value=profile.demographics.ethnicity)
-        br
-        p address: 
-        input(type="text", name="contact[address]", value=profile.contact.address)
-        br
-        p email: 
-        input(type="text", name="contact[email]", value=profile.contact.email)
-        br
-        p phone: 
-        input(type="text", name="contact[phone]", value=profile.contact.phone)
-        br
-        p github: 
-        input(type="text", name="social[github]", value=profile.social.github)
-        br
-        p facebook: 
-        input(type="text", name="social[facebook]", value=profile.social.facebook)
-        br
-        p twitter: 
-        input(type="text", name="social[twitter]" value=profile.social.twitter)
+  head
+    nav.navbar.navbar-fixed-top
+      .container
+      .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/admin') (boot)(up)
+        #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/home') HOME
+        li
+          a(href='/profile') PROFILE  
+        li
+          a(href='/application') APPLICATION
+        li
+          a(href='/application/status') STATUS  
+        li
+          a(href='/logout') LOGOUT
         br
         br
-        input(type="submit")
+    div#profile.container.slide
+      br
+      h2.easy profile
+      form(action"", method="post")
+          input.input.group(type="text", class="form-control", placeholder="name", name="name[firstName]", value=profile.name.firstName)
+          br
+          input.input.group(type="text", class="form-control", placeholder="last name", name="name[lastName]", value=profile.name.lastName)
+          br
+          input.input.group(type="text", class="form-control", placeholder="preferred name", name="name[preferredName]", value=profile.name.preferredName)
+          br
+          input.input.group(type="text", class="form-control", placeholder="street address, city, state and zip", name="contact[address]", value=profile.contact.address)
+          br
+          input.input.group(type="text", class="form-control", placeholder="email", name="contact[email]", value=profile.contact.email)
+          br
+          input.input.group(type="text", class="form-control", placeholder="phone", name="contact[phone]", value=profile.contact.phone)
+          br
+          input.input.group(type="text", class="form-control", placeholder="gender (optional)", name="demographics[gender]", value=profile.demographics.gender)
+          br
+          input.input.group(type="text", class="form-control", placeholder="age (optional)", name="demographics[age]", value=profile.demographics.age)
+          br
+          input.input.group(type="text", class="form-control", placeholder="ethnicity (optional)", name="demographics[ethnicity]", value=profile.demographics.ethnicity)
+          br
+          input.input.group(type="text", class="form-control", placeholder="https://github.com/(you)", name="social[github]", value=profile.social.github)
+          br
+          input.input.group(type="text", class="form-control", placeholder="https://facebook.com/(you)" name="social[facebook]", value=profile.social.facebook)
+          br
+          input.input.group(type="text", class="form-control", placeholder="https://twitter.com/(you)" name="social[twitter]" value=profile.social.twitter)
+          br
+          br
+          input.btn.btn-default#profilebutton.slow(type="submit")

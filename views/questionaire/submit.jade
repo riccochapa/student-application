@@ -1,12 +1,19 @@
 extends ../layout
 
 block content
-    h1 submit.jade
-    h3 username #{user.nickname}
-    h4 application complete
+  div#submit.slide
+    br
+    h1#questionaire submitted application
+    br
     each response in questionaire.question
       ul
-      p #{response.statement}
-        p #{response.response}
-        a(href='/questionaire/edit/#{response.number}')
-          button edit
+      br
+      .panel.panel-default
+        .panel-heading
+          h3.panel-title #{response.statement}
+        .panel-body
+          h5.panel-title #{response.response}
+      br
+      a.btn.btn-default#profilebutton(href='/questionaire/edit/#{response.number}') edit response
+      br
+      br

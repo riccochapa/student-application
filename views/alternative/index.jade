@@ -9,7 +9,7 @@ block content
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/admin') (boot)(up)
+      a.navbar-brand(href='#admin') (boot)(up)
         #myNavbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         li
@@ -19,10 +19,7 @@ block content
         li
           a(href='/application') APPLICATION
         li
-          a(href='/application/status') STATUS  
+          a(href='/status') STATUS  
         li
           a(href='/logout') LOGOUT
-      
-    div#application.slide
-      iframe(width='560', height='615', src='http://localhost:8080/questionaire', frameborder='0')
-      br
+    div 
