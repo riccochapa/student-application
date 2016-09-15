@@ -1,4 +1,4 @@
-#Student Application Portal for Code[rgv] (boot)
+#Student Application Portal for CodeRGV Boot
 
 Online application portal with secure login and unique user id's for registered applicants and administrators.
 
