@@ -27,6 +27,30 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
   });
 });
 
+/* needed to create admin privleges database
+router.post('/', ensureLoggedIn, function(req, res, next) {
+  var Admin = require('../models/admin.js');
+    Admin.findOne({
+        id: req.user.id
+    }, function(err, admin) {
+        if (err) return next(err);
+
+        if (!admin) admin = new Admin({
+            id: req.user.id
+        });
+
+        for (let prop in req.body) {
+            admin[prop] = req.body[prop];
+        }
+        admin.save(function(err) {
+            if (err) return next(err);
+            res.redirect('/admin/index');
+        });
+    });
+
+});
+*/
+
 router.get('/review/:applicantid', ensureLoggedIn, function(req, res, next) {
   var Questionaire = require('../models/questionaire.js');
   var Profile = require('../models/profile.js');
