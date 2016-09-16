@@ -38,4 +38,4 @@ gulp.task('start', function() {
 
 });
 
-gulp.task('default', ['start', 'watch']);
+gulp.task('default', ['start', 'watch']);  
