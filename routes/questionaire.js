@@ -10,26 +10,24 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     Questionaire.findOne({
       id: req.user.id
     }, function(err, questionaire) {
-      if (questionaire)
-        res.redirect('/questionaire/submit');
+      if (!questionaire)
+      res.render('questionaire/index', {
+          user: req.user,
+          questionaire: questionaire,
+          questions: questions,
+      });
       else
-        res.render('questionaire/index', {
-            user: req.user,
-            questionaire: questionaire,
-            questions: questions,
-        });
+      res.redirect('/questionaire/submit');
     });
 });
 
 router.get('/submit', ensureLoggedIn, function(req, res, next) {
     Questionaire.findOne({
       id: req.user.id,
-    }, function(err, questionaire, question, response) {
+    }, function(err, questionaire) {
         res.render('questionaire/submit', {
             user: req.user,
             questionaire: questionaire,
-            question: question,
-            response: response,
             id: req.user.id,
             _id: req.params.id
         });
@@ -39,7 +37,7 @@ router.get('/submit', ensureLoggedIn, function(req, res, next) {
 router.get('/completed', ensureLoggedIn, function(req, res, next) {
     Questionaire.findOne({
       id: req.user.id,
-    }, function(err, questionaire, question, response) {
+    }, function(err, questionaire) {
         res.render('questionaire/completed', {
             user: req.user,
             questionaire: questionaire,

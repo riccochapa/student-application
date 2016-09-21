@@ -1,10 +1,41 @@
 extends ../layout
 
 block content
-  h1 waitlisted applicants
+  div
+    nav.navbar.navbar-fixed-top
+      .container
+      .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/home') (boot)(up)
+        #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/admin') HOME
+        li
+          a(href='/admin/accepted') ACCEPTED  
+        li
+          a(href='/admin/waitlisted') WAITLISTED
+        li
+          a(href='/admin/alternative') ALTERNATIVE  
+        li
+          a(href='/logout') LOGOUT
+        br
+  div#belownav
+  div
+  br
+  h1 waitlisted canidates
+  br
+  div#applicantreview
   br
   br
+  br
+  div
+  | add button to update status on applicants page
   each section in profile
     dl
       h3 #{section.name.firstName} #{section.name.lastName}
       br
+      dt add button to update status on applicants page

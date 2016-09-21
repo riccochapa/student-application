@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  head
+  div
     nav.navbar.navbar-fixed-top
       .container
       .navbar-header
@@ -22,7 +22,10 @@ block content
           a(href='/application/status') STATUS  
         li
           a(href='/logout') LOGOUT
-      
-    div#application.slide
-      iframe(width='560', height='615', src='http://localhost:8080/questionaire', frameborder='0')
-      br
+        br
+  div
+  br
+  div#application
+    br
+    iframe(width='660', height='615', src='/questionaire', frameborder='0')
+    br

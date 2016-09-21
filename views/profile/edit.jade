@@ -24,33 +24,42 @@ block content
           a(href='/logout') LOGOUT
         br
         br
+    div#belownav
+    div
+    br
     div#profile.container.slide
       br
+      br
       h2.easy profile
+      br
+      br
       form(action"", method="post")
+        div.col-md-4
           input.input.group(type="text", class="form-control", placeholder="name", name="name[firstName]", value=profile.name.firstName)
           br
-          input.input.group(type="text", class="form-control", placeholder="last name", name="name[lastName]", value=profile.name.lastName)
-          br
-          input.input.group(type="text", class="form-control", placeholder="preferred name", name="name[preferredName]", value=profile.name.preferredName)
-          br
-          input.input.group(type="text", class="form-control", placeholder="street address, city, state and zip", name="contact[address]", value=profile.contact.address)
-          br
           input.input.group(type="text", class="form-control", placeholder="email", name="contact[email]", value=profile.contact.email)
+          br
+          input.input.group(type="text", class="form-control", placeholder="age (optional)", name="demographics[age]", value=profile.demographics.age)
+          br
+          input.input.group(type="text", class="form-control", placeholder="https://github.com/(you)", name="social[github]", value=profile.social.github)
+          br
+        div.col-md-4
+          input.input.group(type="text", class="form-control", placeholder="last name", name="name[lastName]", value=profile.name.lastName)
           br
           input.input.group(type="text", class="form-control", placeholder="phone", name="contact[phone]", value=profile.contact.phone)
           br
           input.input.group(type="text", class="form-control", placeholder="gender (optional)", name="demographics[gender]", value=profile.demographics.gender)
           br
-          input.input.group(type="text", class="form-control", placeholder="age (optional)", name="demographics[age]", value=profile.demographics.age)
+          input.input.group(type="text", class="form-control", placeholder="https://facebook.com/(you)" name="social[facebook]", value=profile.social.facebook)
+          br
+        div.col-md-4  
+          input.input.group(type="text", class="form-control", placeholder="preferred name", name="name[preferredName]", value=profile.name.preferredName)
+          br
+          input.input.group(type="text", class="form-control", placeholder="street address, city, state and zip", name="contact[address]", value=profile.contact.address)
           br
           input.input.group(type="text", class="form-control", placeholder="ethnicity (optional)", name="demographics[ethnicity]", value=profile.demographics.ethnicity)
-          br
-          input.input.group(type="text", class="form-control", placeholder="https://github.com/(you)", name="social[github]", value=profile.social.github)
-          br
-          input.input.group(type="text", class="form-control", placeholder="https://facebook.com/(you)" name="social[facebook]", value=profile.social.facebook)
           br
           input.input.group(type="text", class="form-control", placeholder="https://twitter.com/(you)" name="social[twitter]" value=profile.social.twitter)
           br
           br
-          input.btn.btn-default#profilebutton.slow(type="submit")
+        input.btn.btn-default#profilebutton.slow(type="submit")

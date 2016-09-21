@@ -1,38 +1,89 @@
 extends ../layout
 
 block content
+  div
+    nav.navbar.navbar-fixed-top
+      .container
+      .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/home') (boot)(up)
+        #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/admin') HOME
+        li
+          a(href='/admin/accepted') ACCEPTED  
+        li
+          a(href='/admin/waitlisted') WAITLISTED
+        li
+          a(href='/admin/alternative') ALTERNATIVE  
+        li
+          a(href='/logout') LOGOUT
+        br
+  div#belownav
+  div
+  br
   h1 applicant review
   br
+  div#applicantreview
   br
-  each section in profile
-    dl
-      h3 #{section.name.preferredName} 
-      dt #{section.name.firstName} #{section.name.lastName}
-      br
-      br
-      dt #{section.contact.phone}
-      dt #{section.contact.email} 
-      dt #{section.contact.address} 
-      br
-      br
-      dt #{section.social.github}
-      dt #{section.social.facebook} 
-      dt #{section.social.twitter}
-      br
-      br
-      dt #{section.demographics.age} 
-      dt #{section.demographics.gender} 
-      dt #{section.demographics.ethnicity} 
-      br
-      br
+  br
+  br
+  div.col-md-4#adminreview
+    each section in profile
+      dl
+        h3 #{section.name.preferredName} 
+        dt #{section.name.firstName} #{section.name.lastName}
+        br
+        dt #{section.demographics.age} - #{section.demographics.gender} - #{section.demographics.ethnicity} 
+        br
+        br
+        dt #{section.contact.phone}
+        br
+        dt #{section.contact.email}
+        br 
+        dt #{section.contact.address} 
+        br
+        br
+        dt #{section.social.github}
+        dt #{section.social.facebook} 
+        dt #{section.social.twitter}
+        br
+        br
+        a.btn.btn-default#adminbutton(href='/admin/accepted/#{section.id}') ACCEPTED
+        br
+        a.btn.btn-default#adminbutton(href='/admin/waitlisted/#{section.id}') WAITLIST
+        br
+        a.btn.btn-default#adminbutton(href='/admin/alternative/#{section.id}') ALTERNATIVE
+            
+  div.col-md-8#adminreviewquestionaire
+    br
+    form   
     each responses in questionaire
       each detail in responses.question
         h4 #{detail.statement}
         br
         ul #{detail.response}
-        br
-        br
-        br
-    a.btn.btn-primary(href='/admin/accepted/#{section.id}') ACCEPTED
-    a.btn.btn-warning(href='/admin/waitlisted/#{section.id}') WAITLIST
-    a.btn.btn-danger(href='/admin/alternative/#{section.id}') ALTERNATIVE   
+          br
+          br
+          .form-group#rateform 
+            label(for='exampleSelect1') rate response
+              |     
+              select#exampleSelect1.form-control
+                option 1
+                |       
+                option 2
+                |       
+                option 3
+                |       
+                option 4
+                |       
+                option 5
+      input.btn.btn-default#adminreviewbutton(type="submit")
+      br
+      br   
+      br
+      br

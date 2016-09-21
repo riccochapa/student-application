@@ -1,106 +1,109 @@
 extends layout
 
 block content
-  nav.navbar.navbar-fixed-top
-    .container
-    .navbar-header
-    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    a.navbar-brand(href='/admin') (boot)(up)
-      #myNavbar.collapse.navbar-collapse
-    ul.nav.navbar-nav.navbar-right
-      li
-        a(href='/home') HOME
-      li
-        a(href='/profile') PROFILE  
-      li
-        a(href='/application') APPLICATION
-      li
-        a(href='/application/status') STATUS  
-      li
-        a(href='/logout') LOGOUT
-        
-    div 
-    canvas#c
-    script.
-      window.onload = function(argument) {
-      // var lyric = "i couldn't take it couldn't stand another minute couldn't bear another day without you in it";
-      //var lyric = "i couldn't take it couldn't stand another minute couldn't bear another day without you in it all of the joy that I had known for my life was stripped away from me the minute that you died to have you in my life was all i ever wanted but now without you I'm a soul forever haunted can't help but feel that i had taken you for granted no way in hell that i can ever comprehend this i wasn't dreaming when they told me you were gone i was wide awake and feeling that they had to be wrong how could you leave me when you swore that you would stay now i'm trapped inside a nightmare every single fucking day it's like a movie but there's not a happy ending every scene fades black and there's no pretending this little fairy tale doesn't seem to end well theres no knight in shining armor who will wake me from the spell i know you didn't plan this you tried to do what's right but in the middle of this madness i'm the one you left to win this fight red like roses fills my head with dreams and finds me always closer to the emptiness and sadness that has come to take the place of you i know you're broken down by anger and by sadness you feel I left you in a world that's full of madness wish i could talk to you if only for a minute make you understand the reasons why i did it i wanna tell you that you're all that ever mattered want you to know that for eternity i'm shattered i tried so hard just to protect you but i failed to and in a prison of abandonment i've jailed you i never planned that i would leave you there alone i was sure that i would see you when i made it back home and all the times I swore that it would be okay now i'm nothing but a liar and you're thrown into the fray this bedtime story ends with misery ever after the pages are torn and there's no final chapter i didn't have a choice I did what I had to do i made a sacrifice but forced a bigger sacrifice on you i know you've lived a nightmare i caused you so much pain but baby please don't do what i did i don't want you to waste your life in vain red like roses fills my head with dreams and finds me always closer to the emptiness and sadness that has come to take the place of you you're not the only one who needed me i thought you understood you were the one i needed and you left me as I always feared you would would I change it if i could? it doesn't matter how the petals scatter now every nightmare just discloses it's your blood that's red like roses and no matter what I do nothing ever takes the place of you red like roses fills my head with dreams and finds me always closer to the emptiness and sadness that has come to take the place of you";
-      //var lyric = " * # % < > // | express = require(express);  path = require(path);  favicon = require(serve-favicon);  logger = require(morgan);  cookieParser = require(cookie-parser);  bodyParser = require(body-parser);  methodOverride = require(method-override);  passport = require(passport);  LocalStrategy = require(passport-local).Strategy;  Auth0Strategy = require(passport-auth0);  dotenv = require(dotenv);  session = require(express-session); dotenv.load(); const MONGO_PASS = process.env. MONGO_DB_PASS; const MONGO_HOST = process.env. OPENSHIFT_MONGODB_DB_HOST; const MONGO_PORT = process.env.OPENSHIFT_MONGODB_DB_PORT;  mongoose = require('mongoose'); if (MONGO_HOST) { mongoose.connect(mongodb://admin: + MONGO_PASS + @ + MONGO_HOST + : + MONGO_PORT + /applications);} else { mongoose.connect (mongodb://localhost/applications); } var routes = require(./routes/index); var home = require(./routes/home); var admin = require(./routes/admin); var application = require(./routes/application); var profile = require (./routes/profile); var questions = require(./routes/questionaire); var strategy = new Auth0Strategy ({ domain: process.env.AUTH0_DOMAIN, clientID: process.env. AUTH0_CLIENT_ID, clientSecret: process.env.AUTH0_CLIENT_SECRET, callbackURL: process.env.AUTH0_CALLBACK_URL}, function(access p.use(passport.initialize()); app.use (passport.session()); app.use (express.static(path.join (__dirname, ./public))); app.use(/, routes); app.use(/home, home); app.use(/admin, admin app.use(/application, application) app.use(/profile, profile): app.use(/questionaire, questions); app.use(function(req, res, next) {var err = new Error(Not Found); err.status = 404; next(err) }); if (app.get(env) === development) {app.use(function (err, req, res, next) {res.status (err.status || 500); res.render(error, {message: err.message, error: err}); });} app.use (function(err, req, res, next) {res.status (err.status || 500); Res.render(error, {message: err.message, error: {} }); }); module.exports = app;";
-      var lyric = "In 1988, 11-year-old Dade Zero Cool Murphy is arrested and charged with crashing 1,507 computer systems in a single day and causing a single-day 7-point drop in the New York Stock Exchange. His family is fined $45,000 for the events and he is banned from using computers or touch-tone telephones until he is 18 years old. Seven years later, Dade (Jonny Lee Miller), is now living with his divorced mother in New York City. On Dade's 18th birthday, he receives a computer and uses social engineering to hack into a local television station's computer network, changing the current TV program to an episode of The Outer Limits. However, Dade's intrusion is countered by another hacker (handle Acid Burn) on the same network, and they briefly converse, with Dade identifying himself by a new alias: Crash Override. Dade enrolls in a local high school (for which Stuyvesant High School is used as the filming location) where he meets Kate Libby (Angelina Jolie) who pranks Dade by claiming that there's a pool on the roof of the school. Ramon The Phantom Phreak Sanchez (Renoly Santiago) observes Dade accessing the school network during computer class to put himself in the same English class as Kate, and invites him to a hacker nightclub, Cyberdelia, where Dade beats Kate's high score in the Wipeout arcade game. Soon after, Dade exacts revenge for the earlier prank by scheduling a test of the school's sprinkler system the next day. Dade begins integrating himself into Phreak's circle of hacker friends: Emmanuel Cereal Killer Goldstein (Matthew Lillard), Paul Lord Nikon Cook (Laurence Mason) (so named for his photographic memory), and Joey Pardella (Jesse Bradford), an aspiring novice hacker without an alias. At a party, Dade learns that Kate is Acid Burn, the hacker that kicked him out of the TV network earlier. Meanwhile, Joey, out to prove his skills, successfully breaks into The Gibson, an Ellingson Mineral Company supercomputer. He attempts to download a garbage file as proof of his feat, but his mother disconnects his computer so he'll sleep, leaving Joey with a fragmented file. However, prior to Joey's disconnection, the company's IT employee Hal (Penn Jillette) detects this unauthorized entry and summons computer security officer Eugene The Plague Belford (Fisher Stevens), a former hacker. While going through the files, Plague realizes the garbage file being downloaded is a worm he inserted to defraud Ellingson. The Plague pretends the hackers are to blame and enlists the US Secret Service to recover the file, claiming it is the code to a computer virus (named Da Vinci for an image of the Vitruvian Man that accompanies it) that will capsize the company's oil tanker fleet. In fact, The Plague had inserted the virus as a red herring to cover for his worm. Soon after, Joey is arrested and his computer is searched, but the Secret Service doesn't find anything, as Joey had hidden the disk containing the files. In response, Dade and Kate decide to settle their disagreements with a bet, with Dade choosing a date with Kate as his prize and Kate electing to have Dade perform menial computing tasks. The hacking duel focuses on harassing Secret Service Agent Richard Gill (Wendell Pierce), Hacker enemy number one, who was involved in Joey's arrest. After various pranks including canceling Gill's credit cards, creating a fake embarrassing personal ad in Gill's name, fabricating a criminal record, and changing his payroll status to deceased After being released on parole, Joey reveals the disk to Phreak in a public park; but they quickly realize that they are being followed by the Secret Service. The next day, Phreak is arrested and uses his phone call to inform Kate that he hid the disk in a boys' bathroom at school. That evening, Kate and Cereal Killer ask Dade for his help; but he"
-      var words = {};
-      var words_attr = [];
-      string_handle(lyric);
-      var canvas = document.getElementById('c');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      if (canvas.getContext) {
-      var c = canvas.getContext('2d'),
-      w = canvas.width,
-      h = canvas.height;
-      c.strokeStyle = 'red';
-      c.fillStyle = 'white';
-      c.lineWidth = 5;
-      // constructor
-      Word = function(key) {
-      this.text = key;
-      this.x = Math.random() * w;
-      this.y = Math.random() * h;
-      this.font = words[key] * 10 + 'px arial'
-      this.speed = (words[key]);
-      }
-      for (key in words) {
-      words_attr.push(new Word(key));
-      }
-      console.log(words_attr.length);
-      function animation() {
-      for (var i = 0; i < words_attr.length; i++) {
-      c.font = words_attr[i].font;
-      c.fillText(words_attr[i].text, words_attr[i].x, words_attr[i].y);
-      words_attr[i].width = c.measureText(words_attr[i].text).width;
-      c.stroke();
-      }
-      move();
-      }
-      function move() {
-      for (var i = 0; i < words_attr.length; i++) {
-      if (words_attr[i].x > w) {
-      words_attr[i].x = -words_attr[i].width;
-      words_attr[i].y = Math.random()*h;
-      }else{
-      words_attr[i].x += words_attr[i].speed;
-      }
-      }
-      }
-      setInterval(function() {
-      c.clearRect(0,0,w,h);
-      animation();
-      },24);
-      }
-      function string_handle(str) {
-      var split_str = str.split(" ");
-      var word_array = [];
-      var word_count = [];
-      for (var i = 0; i < split_str.length; i++) {
-      check = true;
-      for (var j = 0; j <= word_array.length; j++) {
-      if (split_str[i] == word_array[j]) {
-      word_count[j]++;
-      check = false;
-      break;
-      }
-      }
-      if (check) {
-      word_array.push(split_str[i]);
-      word_count.push(1);
-      }
-      }
-      for (var i = 0; i < word_array.length; i++) {
-      words[word_array[i]] = word_count[i];
-      }
-      return words;
-      }
-      }
-      //# sourceURL=pen.js
+  div
+    nav.navbar.navbar-fixed-top
+      .container
+      .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/admin') (boot)(up)
+        #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/home') HOME
+        li
+          a(href='/profile') PROFILE  
+        li
+          a(href='/application') APPLICATION
+        li
+          a(href='/application/status') STATUS  
+        li
+          a(href='/logout') LOGOUT
+  br        
+  div#one
+    | code[rgv]
+  div
+  canvas#c
+  script.
+    window.onload = function(argument) {
+    // var lyric = "i couldn't take it couldn't stand another minute couldn't bear another day without you in it";
+    //var lyric = "i couldn't take it couldn't stand another minute couldn't bear another day without you in it all of the joy that I had known for my life was stripped away from me the minute that you died to have you in my life was all i ever wanted but now without you I'm a soul forever haunted can't help but feel that i had taken you for granted no way in hell that i can ever comprehend this i wasn't dreaming when they told me you were gone i was wide awake and feeling that they had to be wrong how could you leave me when you swore that you would stay now i'm trapped inside a nightmare every single fucking day it's like a movie but there's not a happy ending every scene fades black and there's no pretending this little fairy tale doesn't seem to end well theres no knight in shining armor who will wake me from the spell i know you didn't plan this you tried to do what's right but in the middle of this madness i'm the one you left to win this fight red like roses fills my head with dreams and finds me always closer to the emptiness and sadness that has come to take the place of you i know you're broken down by anger and by sadness you feel I left you in a world that's full of madness wish i could talk to you if only for a minute make you understand the reasons why i did it i wanna tell you that you're all that ever mattered want you to know that for eternity i'm shattered i tried so hard just to protect you but i failed to and in a prison of abandonment i've jailed you i never planned that i would leave you there alone i was sure that i would see you when i made it back home and all the times I swore that it would be okay now i'm nothing but a liar and you're thrown into the fray this bedtime story ends with misery ever after the pages are torn and there's no final chapter i didn't have a choice I did what I had to do i made a sacrifice but forced a bigger sacrifice on you i know you've lived a nightmare i caused you so much pain but baby please don't do what i did i don't want you to waste your life in vain red like roses fills my head with dreams and finds me always closer to the emptiness and sadness that has come to take the place of you you're not the only one who needed me i thought you understood you were the one i needed and you left me as I always feared you would would I change it if i could? it doesn't matter how the petals scatter now every nightmare just discloses it's your blood that's red like roses and no matter what I do nothing ever takes the place of you red like roses fills my head with dreams and finds me always closer to the emptiness and sadness that has come to take the place of you";
+    //var lyric = " * # % < > // | express = require(express);  path = require(path);  favicon = require(serve-favicon);  logger = require(morgan);  cookieParser = require(cookie-parser);  bodyParser = require(body-parser);  methodOverride = require(method-override);  passport = require(passport);  LocalStrategy = require(passport-local).Strategy;  Auth0Strategy = require(passport-auth0);  dotenv = require(dotenv);  session = require(express-session); dotenv.load(); const MONGO_PASS = process.env. MONGO_DB_PASS; const MONGO_HOST = process.env. OPENSHIFT_MONGODB_DB_HOST; const MONGO_PORT = process.env.OPENSHIFT_MONGODB_DB_PORT;  mongoose = require('mongoose'); if (MONGO_HOST) { mongoose.connect(mongodb://admin: + MONGO_PASS + @ + MONGO_HOST + : + MONGO_PORT + /applications);} else { mongoose.connect (mongodb://localhost/applications); } var routes = require(./routes/index); var home = require(./routes/home); var admin = require(./routes/admin); var application = require(./routes/application); var profile = require (./routes/profile); var questions = require(./routes/questionaire); var strategy = new Auth0Strategy ({ domain: process.env.AUTH0_DOMAIN, clientID: process.env. AUTH0_CLIENT_ID, clientSecret: process.env.AUTH0_CLIENT_SECRET, callbackURL: process.env.AUTH0_CALLBACK_URL}, function(access p.use(passport.initialize()); app.use (passport.session()); app.use (express.static(path.join (__dirname, ./public))); app.use(/, routes); app.use(/home, home); app.use(/admin, admin app.use(/application, application) app.use(/profile, profile): app.use(/questionaire, questions); app.use(function(req, res, next) {var err = new Error(Not Found); err.status = 404; next(err) }); if (app.get(env) === development) {app.use(function (err, req, res, next) {res.status (err.status || 500); res.render(error, {message: err.message, error: err}); });} app.use (function(err, req, res, next) {res.status (err.status || 500); Res.render(error, {message: err.message, error: {} }); }); module.exports = app;";
+    var lyric = "In 1988, 11-year-old Dade Zero Cool Murphy is arrested and charged with crashing 1,507 computer systems in a single day and causing a single-day 7-point drop in the New York Stock Exchange. His family is fined $45,000 for the events and he is banned from using computers or touch-tone telephones until he is 18 years old. Seven years later, Dade (Jonny Lee Miller), is now living with his divorced mother in New York City. On Dade's 18th birthday, he receives a computer and uses social engineering to hack into a local television station's computer network, changing the current TV program to an episode of The Outer Limits. However, Dade's intrusion is countered by another hacker (handle Acid Burn) on the same network, and they briefly converse, with Dade identifying himself by a new alias: Crash Override. Dade enrolls in a local high school (for which Stuyvesant High School is used as the filming location) where he meets Kate Libby (Angelina Jolie) who pranks Dade by claiming that there's a pool on the roof of the school. Ramon The Phantom Phreak Sanchez (Renoly Santiago) observes Dade accessing the school network during computer class to put himself in the same English class as Kate, and invites him to a hacker nightclub, Cyberdelia, where Dade beats Kate's high score in the Wipeout arcade game. Soon after, Dade exacts revenge for the earlier prank by scheduling a test of the school's sprinkler system the next day. Dade begins integrating himself into Phreak's circle of hacker friends: Emmanuel Cereal Killer Goldstein (Matthew Lillard), Paul Lord Nikon Cook (Laurence Mason) (so named for his photographic memory), and Joey Pardella (Jesse Bradford), an aspiring novice hacker without an alias. At a party, Dade learns that Kate is Acid Burn, the hacker that kicked him out of the TV network earlier. Meanwhile, Joey, out to prove his skills, successfully breaks into The Gibson, an Ellingson Mineral Company supercomputer. He attempts to download a garbage file as proof of his feat, but his mother disconnects his computer so he'll sleep, leaving Joey with a fragmented file. However, prior to Joey's disconnection, the company's IT employee Hal (Penn Jillette) detects this unauthorized entry and summons computer security officer Eugene The Plague Belford (Fisher Stevens), a former hacker. While going through the files, Plague realizes the garbage file being downloaded is a worm he inserted to defraud Ellingson. The Plague pretends the hackers are to blame and enlists the US Secret Service to recover the file, claiming it is the code to a computer virus (named Da Vinci for an image of the Vitruvian Man that accompanies it) that will capsize the company's oil tanker fleet. In fact, The Plague had inserted the virus as a red herring to cover for his worm. Soon after, Joey is arrested and his computer is searched, but the Secret Service doesn't find anything, as Joey had hidden the disk containing the files. In response, Dade and Kate decide to settle their disagreements with a bet, with Dade choosing a date with Kate as his prize and Kate electing to have Dade perform menial computing tasks. The hacking duel focuses on harassing Secret Service Agent Richard Gill (Wendell Pierce), Hacker enemy number one, who was involved in Joey's arrest. After various pranks including canceling Gill's credit cards, creating a fake embarrassing personal ad in Gill's name, fabricating a criminal record, and changing his payroll status to deceased After being released on parole, Joey reveals the disk to Phreak in a public park; but they quickly realize that they are being followed by the Secret Service. The next day, Phreak is arrested and uses his phone call to inform Kate that he hid the disk in a boys' bathroom at school. That evening, Kate and Cereal Killer ask Dade for his help; but he"
+    var words = {};
+    var words_attr = [];
+    string_handle(lyric);
+    var canvas = document.getElementById('c');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    if (canvas.getContext) {
+    var c = canvas.getContext('2d'),
+    w = canvas.width,
+    h = canvas.height;
+    c.strokeStyle = 'red';
+    c.fillStyle = 'white';
+    c.lineWidth = 5;
+    // constructor
+    Word = function(key) {
+    this.text = key;
+    this.x = Math.random() * w;
+    this.y = Math.random() * h;
+    this.font = words[key] * 10 + 'px Jura'
+    this.speed = (words[key]);
+    }
+    for (key in words) {
+    words_attr.push(new Word(key));
+    }
+    console.log(words_attr.length);
+    function animation() {
+    for (var i = 0; i < words_attr.length; i++) {
+    c.font = words_attr[i].font;
+    c.fillText(words_attr[i].text, words_attr[i].x, words_attr[i].y);
+    words_attr[i].width = c.measureText(words_attr[i].text).width;
+    c.stroke();
+    }
+    move();
+    }
+    function move() {
+    for (var i = 0; i < words_attr.length; i++) {
+    if (words_attr[i].x > w) {
+    words_attr[i].x = -words_attr[i].width;
+    words_attr[i].y = Math.random()*h;
+    }else{
+    words_attr[i].x += words_attr[i].speed;
+    }
+    }
+    }
+    setInterval(function() {
+    c.clearRect(0,0,w,h);
+    animation();
+    },24);
+    }
+    function string_handle(str) {
+    var split_str = str.split(" ");
+    var word_array = [];
+    var word_count = [];
+    for (var i = 0; i < split_str.length; i++) {
+    check = true;
+    for (var j = 0; j <= word_array.length; j++) {
+    if (split_str[i] == word_array[j]) {
+    word_count[j]++;
+    check = false;
+    break;
+    }
+    }
+    if (check) {
+    word_array.push(split_str[i]);
+    word_count.push(1);
+    }
+    }
+    for (var i = 0; i < word_array.length; i++) {
+    words[word_array[i]] = word_count[i];
+    }
+    return words;
+    }
+    }
+    //# sourceURL=pen.js

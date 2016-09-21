@@ -1,16 +1,47 @@
 extends ../layout
 
 block content
-  div#applications
-    br
-    h1 fall applications
-    div
-    each applicant in profile
-      dl
-        dt #{applicant.name.firstName}
-        dd #{applicant.name.lastName}
+  div
+    nav.navbar.navbar-fixed-top
+      .container
+      .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/home') (boot)(up)
+        #myNavbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/admin') HOME
+        li
+          a(href='/admin/accepted') ACCEPTED  
+        li
+          a(href='/admin/waitlisted') WAITLISTED
+        li
+          a(href='/admin/alternative') ALTERNATIVE  
+        li
+          a(href='/logout') LOGOUT
         br
-        a.btn.btn-xs.btn-success(href='/admin/review/#{applicant.id}') REVIEW
-        br
-        br
-        br
+  div#belownav
+  div
+  br
+  h1 fall applications
+  br
+  div#applicantreview
+  br
+  br
+  br
+  div
+    div.col-md-4
+      each applicant in profile
+        div
+          dl
+            button.list-group-item
+              dt #{applicant.name.firstName} #{applicant.name.lastName}
+              br
+              a.btn.btn-xs.btn-default#adminreviewbutton(href='/admin/review/#{applicant.id}') REVIEW
+              br
+    div.col-md-8
+      | Dashboard goes here
+  // Small modal
