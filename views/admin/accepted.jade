@@ -31,8 +31,12 @@ block content
   div#applicantreview
   br
   br
-  br
+  br 
   div
-    dl
-      h3 #{profile}
-      br
+    each stat in profile
+      - var appStat = stat.application.status
+      if appStat == "accepted"
+        dl #{stat.name.firstName}
+        br
+        
+    

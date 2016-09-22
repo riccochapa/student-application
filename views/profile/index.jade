@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  head
+  header
     nav.navbar.navbar-fixed-top
       .container
       .navbar-header
@@ -21,8 +21,10 @@ block content
         li
           a(href='/application/status') STATUS   
         li
-          a(href='/logout') LOGOUT
-
+          a(href='/logout') LOGOUT     
+    br
+    br
+    br
     div#profile.container.slide
       br
       br
@@ -30,28 +32,32 @@ block content
       br
       br
       br
-      .panel.panel-default.slide
-        .panel-heading
-          h3.panel-title #{profile.name.preferredName}
-        .panel-heading
-          h5.panel-title #{profile.name.firstName} #{profile.name.lastName} 
-      br
-      .panel.panel-default.slide#questionaire 
-        .panel-heading
-          h3.panel-title contact:
-        .panel-body
-          h5.panel-title #{profile.contact.address}
-          h5.panel-title #{profile.contact.email}
-          h5.panel-title #{profile.contact.phone}
-      br
-      .panel.panel-default.slide#questionaire 
-        .panel-heading
-          h3.panel-title social:
-        .panel-body
-          h5.panel-title #{profile.social.github}
-          h5.panel-title #{profile.social.facebook}
-          h5.panel-title #{profile.social.twitter}
-      br
-      br     
-      a.btn.btn-default#profilebutton.easy(href='/profile/edit') edit profile
-      br     
+      div.row
+        div.col-md-4
+        div.col-md-4
+          .panel.panel-default.slide
+            .panel-heading
+              h3.panel-title #{profile.name.preferredName}
+            .panel-heading
+              h5.panel-title #{profile.name.firstName} #{profile.name.lastName} 
+          br
+          .panel.panel-default.slide#questionaire 
+            .panel-heading
+              h3.panel-title contact:
+            .panel-body
+              h5.panel-title #{profile.contact.address}
+              h5.panel-title #{profile.contact.email}
+              h5.panel-title #{profile.contact.phone}
+          br
+          .panel.panel-default.slide#questionaire 
+            .panel-heading
+              h3.panel-title social:
+            .panel-body
+              h5.panel-title #{profile.social.github}
+              h5.panel-title #{profile.social.facebook}
+              h5.panel-title #{profile.social.twitter}
+          br
+          br     
+          a.btn.btn-default#profilebutton.easy(href='/profile/edit') edit profile
+          br
+        div.col-md-4     

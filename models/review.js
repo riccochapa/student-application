@@ -1,22 +1,40 @@
 var mongoose = require("mongoose");
 
 var reviewSchema = new mongoose.Schema({
-  id: { type: String },
+  id: {
+    type: String
+  },
   studentInfo: [{
-      name: { type: String },
-      id: { type: String },
-      profile: { type: String },
-      questionaire: { type: String }
+    name: {
+      type: String
+    },
+    id: {
+      type: String
+    },
+    profile: {
+      type: String
+    },
+    questionaire: {
+      type: String
+    }
   }],
   score: {
-      term: { type: String },
+    term: {
+      type: String
+    },
   },
   questions: [{
-      number: { type: String },
-      rating: { type: String }
+    number: {
+      type: String
+    },
+    rating: {
+      type: String
+    }
   }],
   notes: {
-      type: { type: String }
+    type: {
+      type: String
+    }
   }
 });
 

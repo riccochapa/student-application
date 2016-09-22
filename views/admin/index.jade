@@ -33,15 +33,19 @@ block content
   br
   br
   div
-    div.col-md-4
-      each applicant in profile
-        div
-          dl
-            button.list-group-item
-              dt #{applicant.name.firstName} #{applicant.name.lastName}
-              br
-              a.btn.btn-xs.btn-default#adminreviewbutton(href='/admin/review/#{applicant.id}') REVIEW
-              br
-    div.col-md-8
-      | Dashboard goes here
-  // Small modal
+    div.row
+      div.col-md-4
+        each applicant in profile
+          div
+          - var appReview = applicant.application.status
+          if appReview == "under review"
+            dl
+              button.list-group-item
+                  dt #{applicant.name.firstName} #{applicant.name.lastName}
+                  br
+                  a.btn.btn-xs.btn-default#adminreviewbutton(href='/admin/review/#{applicant.id}') REVIEW
+                  br
+                
+      div.col-md-8
+        | Dashboard goes here
+    // Small modal

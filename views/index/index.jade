@@ -13,6 +13,7 @@ html(lang='en')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css', integrity='sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp', crossorigin='anonymous')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     link(rel='stylesheet', href='/stylesheets/cover.css')
+    script(src='js/bootstrap.min.js')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
     link(href='https://fonts.googleapis.com/css?family=Jura', rel='stylesheet')
     script(src="https://cdn.auth0.com/js/lock/10.0/lock.min.js")
@@ -29,6 +30,20 @@ html(lang='en')
                 i.fa.fa-desktop(aria-hidden="true")    
               a.nav-link(href='/boot') what is (boot)?
               a.nav-link(href='/codergv') what is code[rgv]?
+              a.nav-link(onclick="signin()") login
+       
+                script.
+                  var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}', { auth: {
+                        redirectUrl: '#{env.AUTH0_CALLBACK_URL}'
+                      , responseType: 'code'
+                      , params: {
+                        scope: 'openid name email picture'
+                      }
+                    }});
+                  function signin() {
+                    lock.show();
+                  }
+                  
         .inner.cover
           h1.cover-heading (boot)(up)
             br 
@@ -39,8 +54,15 @@ html(lang='en')
             h3 var methodOverride = require('method-override');
             h3 var localStrategy = require('passport-local').Strategy;
           p.lead
-          a.btn.btn-lg.btn-default(onclick="signin()") apply
-   
+               
+          .mastfoot
+          
+    footer.footer
+      .container
+        span.text-muted 
+          a.btn#apply(onclick="signin()")
+            | apply for spring 2017
+
             script.
               var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}', { auth: {
                     redirectUrl: '#{env.AUTH0_CALLBACK_URL}'
@@ -52,15 +74,7 @@ html(lang='en')
               function signin() {
                 lock.show();
               }
-               
-          .mastfoot
-          
-              footer.footer
-                .container
-                  span.text-muted 
-                    | 
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js', integrity='sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')
     script(src='js/bootstrap.min.js')
-    script(src='../../assets/js/ie10-viewport-bug-workaround.js')

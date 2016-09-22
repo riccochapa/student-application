@@ -33,9 +33,8 @@ block content
   br
   br
   div
-  | add button to update status on applicants page
-  each section in profile
-    dl
-      h3 #{section.name.firstName} #{section.name.lastName}
-      br
-      dt add button to update status on applicants page
+    each stat in profile
+      - var appStat = stat.application.status
+      if appStat == "alternative"
+        dl #{stat.name.firstName}
+        br

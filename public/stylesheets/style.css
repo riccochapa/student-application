@@ -1,15 +1,19 @@
 body{
-    font-family: 'Jura', font: 14px;
-    text-align: center;
-    font-family: 'Jura';
-    font-weight: 100;
-    background-color: black;
-    padding: 2%;
-    color: #FFF;
+  font-family: 'Jura', font: 14px;
+  text-align: center;
+  font-family: 'Jura';
+  font-weight: 100;
+  background-color: black;
+  padding: 2%;
+  color: #FFF;
 }
 
 #edit{
   color: 000;
+}
+
+#red{
+  color: red;
 }
 
 #one{
@@ -173,39 +177,42 @@ footer .glyphicon {
     margin-bottom: 20px;
     color: #f4511e;
 }
-.slideanim {visibility:hidden;}
-
-.slide {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
-}
-.slow {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 10s;
-    -webkit-animation-duration: 7s;
-    visibility: visible;
-}
-.easy {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 10s;
-    -webkit-animation-duration: 7s;
-    visibility: visible;
+.slideanim{
+  visibility:hidden;
 }
 
-.slide#edit {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 3s;
-    -webkit-animation-duration: 4s;
-    visibility: visible;
+.slide{
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  visibility: visible;
 }
 
-.footer {
+.slow{
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 10s;
+  -webkit-animation-duration: 7s;
+  visibility: visible;
+}
+.easy{
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 10s;
+  -webkit-animation-duration: 7s;
+  visibility: visible;
+}
+
+.slide#edit{
+  animation-name: slide;
+  -webkit-animation-name: slide;
+  animation-duration: 3s;
+  -webkit-animation-duration: 4s;
+  visibility: visible;
+}
+
+.footer{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -215,7 +222,7 @@ footer .glyphicon {
   font-size: 18px;
 }
 
-@keyframes slide {
+@keyframes slide{
   0% {
     opacity: 0;
     transform: translateY(70%);
@@ -225,7 +232,7 @@ footer .glyphicon {
     transform: translateY(0%);
   }
 }
-@-webkit-keyframes slide {
+@-webkit-keyframes slide{
   0% {
     opacity: 0;
     -webkit-transform: translateY(70%);
@@ -235,7 +242,7 @@ footer .glyphicon {
     -webkit-transform: translateY(0%);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
   .col-sm-4 {
     text-align: center;
     margin: 25px 0;
@@ -245,7 +252,7 @@ footer .glyphicon {
       margin-bottom: 35px;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px){
   .logo {
       font-size: 150px;
   }

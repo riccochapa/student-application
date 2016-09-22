@@ -2,8 +2,7 @@ extends ../layout
 
 block content
 
-  div
-  
+  div  
     nav.navbar.navbar-fixed-top
       .container
       .navbar-header
@@ -29,11 +28,12 @@ block content
   div#belownav
   
   div
-  
-  br
-  h1 applicant review
-  br
-  
+    each section in profile
+      br
+      h1 applicant review
+      h2 #{section.name.firstName} #{section.name.lastName}
+      h4#red status: #{section.application.status}
+      
   div#applicantreview
   br
   br
@@ -42,7 +42,6 @@ block content
   div.row
   
     div.col-md-4#adminreview
-    
       each section in profile
         dl
           h3 #{section.name.preferredName} 
@@ -63,6 +62,9 @@ block content
           dt #{section.social.twitter}
           br
           br
+          dt status: #{section.application.status}
+          br
+          br
           form(method="post")
             input(hidden, type="text",  name="status", value="accepted")
             button.btn.btn-default#adminbutton(type="submit") ACCEPTED
@@ -74,9 +76,9 @@ block content
           form(method="post")
             input(hidden, type="text",  name="status", value="alternative")
             button.btn.btn-default#adminbutton(type="submit") ALTERNATIVE
-            br    
+            br  
+              
     div.col-md-8#adminreviewquestionaire
-    
       br
       form(method="post")
       .form-group   
