@@ -17,11 +17,12 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
 });
 
 router.get('/status', ensureLoggedIn, function(req, res, next) {
-    Application.findOne({
+  var Profile = require('../models/profile.js');
+    Profile.findOne({
         id: req.user.id
-    }, function(err, application) {
+    }, function(err, profile) {
         res.render('application/status', {
-            application: application,
+            profile: profile,
             user: req.user
         });
     });

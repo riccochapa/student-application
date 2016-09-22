@@ -7,8 +7,10 @@ var profileSchema = new mongoose.Schema({
             unique: true
         }
     },
-    username: {
-        type: String
+    application: {
+      status: {
+          type: String
+      },
     },
     joined: {
         type: Number

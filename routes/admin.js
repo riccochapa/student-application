@@ -74,6 +74,23 @@ router.get('/review/:applicantid', ensureLoggedIn, function(req, res, next) {
   });
 });
 
+router.post('/review/:applicantid', ensureLoggedIn, function(req, res, next) {
+  var Questionaire = require('../models/questionaire.js');
+  var Profile = require('../models/profile.js');
+  var Admin = require('../models/admin.js');
+  var applicantid = req.params.applicantid;
+
+    Profile.findOneAndUpdate({
+      id: req.params.applicantid
+    }, { $set: { application: {
+          'status': req.body.status
+        }}}, { upsert : true },
+    function(err, profile) {
+        if (err) return next(err);
+        res.redirect('/admin');
+      });
+});
+
 router.get('/accepted', ensureLoggedIn, function(req, res, next) {
   var Questionaire = require('../models/questionaire.js');
   var Profile = require('../models/profile.js');
@@ -97,7 +114,6 @@ router.get('/accepted', ensureLoggedIn, function(req, res, next) {
   });
 });
 
-
 router.get('/accepted/:applicantid', ensureLoggedIn, function(req, res, next) {
   var Questionaire = require('../models/questionaire.js');
   var Profile = require('../models/profile.js');
@@ -110,7 +126,7 @@ router.get('/accepted/:applicantid', ensureLoggedIn, function(req, res, next) {
           if (!admin)
           res.redirect('/home');
           else
-          res.render('admin/accepted', {
+          res.render('admin/accepted/detail', {
               profile : profile,
               questionaire : questionaire,
               admin: admin,
@@ -156,7 +172,7 @@ router.get('/waitlisted/:applicantid', ensureLoggedIn, function(req, res, next) 
           if (!admin)
           res.redirect('/home');
           else
-          res.render('admin/waitlisted', {
+          res.render('admin/waitlisted/detail', {
               profile : profile,
               questionaire : questionaire,
               admin: admin,
@@ -202,7 +218,7 @@ router.get('/alternative/:applicantid', ensureLoggedIn, function(req, res, next)
           if (!admin)
           res.redirect('/home');
           else
-          res.render('admin/alternative', {
+          res.render('admin/alternative/detail', {
               profile : profile,
               questionaire : questionaire,
               admin: admin,

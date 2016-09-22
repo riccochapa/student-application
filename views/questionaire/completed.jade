@@ -5,4 +5,8 @@ block content
     br
     h1 application completed
     br
-    a.btn.btn-default#profilebutton(href='/questionaire/submit') edit application
+    form(method="post")
+      input(hidden, type="text",  name="status", value="under review")
+      button.btn.btn-default#adminbutton(type="submit") Submit Application
+      br 
+ 

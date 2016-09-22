@@ -21,6 +21,31 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     });
 });
 
+router.get('/completed', ensureLoggedIn, function(req, res, next) {
+    Questionaire.findOne({
+      id: req.user.id,
+    }, function(err, questionaire) {
+        res.render('questionaire/completed', {
+            user: req.user,
+            questionaire: questionaire,
+        });
+    });
+});
+
+router.post('/completed', ensureLoggedIn, function(req, res, next) {
+  var Profile = require('../models/profile.js');
+
+    Profile.findOneAndUpdate({
+      id: req.user.id,
+    }, { $set: { application: {
+          'status': req.body.status
+        }}}, { upsert : true },
+    function(err, profile) {
+        if (err) return next(err);
+        res.redirect('/questionaire/submit');
+      });
+});
+
 router.get('/submit', ensureLoggedIn, function(req, res, next) {
     Questionaire.findOne({
       id: req.user.id,
@@ -30,17 +55,6 @@ router.get('/submit', ensureLoggedIn, function(req, res, next) {
             questionaire: questionaire,
             id: req.user.id,
             _id: req.params.id
-        });
-    });
-});
-
-router.get('/completed', ensureLoggedIn, function(req, res, next) {
-    Questionaire.findOne({
-      id: req.user.id,
-    }, function(err, questionaire) {
-        res.render('questionaire/completed', {
-            user: req.user,
-            questionaire: questionaire,
         });
     });
 });
