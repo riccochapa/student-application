@@ -35,6 +35,8 @@ block content
   div
     div.row
       div.col-md-4
+        h3 pending review
+        br
         each applicant in profile
           div
           - var appReview = applicant.application.status
@@ -47,5 +49,5 @@ block content
                   br
                 
       div.col-md-8
-        | Dashboard goes here
+        h3 applicant dashboard
     // Small modal

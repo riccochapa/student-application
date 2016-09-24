@@ -20,6 +20,9 @@ var questionSchema = new mongoose.Schema({
     user: {
         type: String
     },
+    rating: {
+      type: String
+    }
   }],
 });
 

@@ -59,6 +59,11 @@ var profileSchema = new mongoose.Schema({
     twitter: {
       type: String
     }
+  },
+  notes: {
+    type: {
+      type: String
+    }
   }
 });
 

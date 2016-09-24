@@ -10,6 +10,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var Auth0Strategy = require('passport-auth0');
 var dotenv = require('dotenv');
 var session = require('express-session');
+var helmet = require('helmet');
 
 dotenv.load();
 
@@ -53,7 +54,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-
+app.use(helmet());
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
     extended: true

@@ -93,6 +93,7 @@ body{
   text-align: left;
   position: fixed;
   margin-right: 15%;
+  padding-bottom: 5%;
 }
 
 #adminreviewquestionaire{
@@ -255,5 +256,8 @@ footer .glyphicon {
 @media screen and (max-width: 480px){
   .logo {
       font-size: 150px;
+  }
+  .navbar-right li a{
+    font-size: 8px;
   }
 }

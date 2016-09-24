@@ -29,6 +29,31 @@ router.post('/', ensureLoggedIn, function(req, res, next) {
   });
 });
 
+router.get('/welcome', ensureLoggedIn, function(req, res, next) {
+  Profile.findOne({
+    id: req.user.id
+  }, function(err, profile) {
+    res.render('profile/welcome', {
+      profile: profile,
+      user: req.user
+    });
+  });
+});
+
+router.post('/welcome', ensureLoggedIn, function(req, res, next) {
+  Profile.findOne({
+    id: req.user.id
+  }, function(err, profile) {
+    if (err) return next(err);
+    if (!profile) profile = new Profile({ id: req.user.id });
+    for (let prop in req.body) { profile[prop] = req.body[prop]; }
+    profile.save(function(err) {
+      if (err) return next(err);
+      res.redirect('/profile/create');
+    });
+  });
+});
+
 router.get('/create', ensureLoggedIn, function(req, res, next) {
   Profile.findOne({
     id: req.user.id
@@ -49,7 +74,7 @@ router.post('/create', ensureLoggedIn, function(req, res, next) {
     for (let prop in req.body) { profile[prop] = req.body[prop]; }
     profile.save(function(err) {
       if (err) return next(err);
-      res.redirect('/profile/edit');
+      res.redirect('/application');
     });
   });
 });

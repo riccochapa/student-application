@@ -32,7 +32,8 @@ block content
       br
       h1 applicant review
       h2 #{section.name.firstName} #{section.name.lastName}
-      h4#red status: #{section.application.status}
+      h3 
+      h4#red #{section.application.status}
       
   div#applicantreview
   br
@@ -49,34 +50,35 @@ block content
           br
           dt #{section.demographics.age} - #{section.demographics.gender} - #{section.demographics.ethnicity} 
           br
-          br
           dt #{section.contact.phone}
           br
           dt #{section.contact.email}
           br 
           dt #{section.contact.address} 
           br
-          br
           dt #{section.social.github}
           dt #{section.social.facebook} 
           dt #{section.social.twitter}
           br
-          br
-          dt status: #{section.application.status}
-          br
+          dt status: 
+            dd#red #{section.application.status}
           br
           form(method="post")
             input(hidden, type="text",  name="status", value="accepted")
             button.btn.btn-default#adminbutton(type="submit") ACCEPTED
             br
           form(method="post")
-            input(hidden, type="text",  name="status", value="waitlisted")
+            input(hidden, type="text",  name="status", value="waitlist")
             button.btn.btn-default#adminbutton(type="submit") WAITLIST
             br
           form(method="post")
-            input(hidden, type="text",  name="status", value="alternative")
+            input(hidden, type="text",  name="status", value="alternative track")
             button.btn.btn-default#adminbutton(type="submit") ALTERNATIVE
-            br  
+            br
+          form(method="post")
+            input(hidden, type="text",  name="status", value="under review")
+            button.btn.btn-default#adminbutton(type="submit") UNDER REVIEW
+            br    
               
     div.col-md-8#adminreviewquestionaire
       br

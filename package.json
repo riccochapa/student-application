@@ -26,8 +26,10 @@
     "eventemitter": "^0.3.3",
     "express": "^4.14.0",
     "express-session": "^1.14.0",
+    "helmet": "^2.2.0",
     "jade": "^1.11.0",
     "method-override": "^2.3.6",
+    "minimatch": "3.0.2",
     "mongoose": "^4.5.4",
     "morgan": "~1.7.0",
     "passport": "^0.2.2",
@@ -36,7 +38,8 @@
     "passport-local": "^1.0.0",
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
-    "session": "^0.1.0"
+    "session": "^0.1.0",
+    "uglify-js": "2.4.24"
   },
   "devDependencies": {
     "express-livereload": "0.0.24",

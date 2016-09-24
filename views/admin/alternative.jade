@@ -36,5 +36,9 @@ block content
     each stat in profile
       - var appStat = stat.application.status
       if appStat == "alternative"
-        dl #{stat.name.firstName}
-        br
+        dl
+          button.list-group-item
+              dt #{stat.name.firstName} #{stat.name.lastName}
+              br
+              a.btn.btn-xs.btn-default#adminreviewbutton(href='/admin/review/#{stat.id}') REVIEW
+              br

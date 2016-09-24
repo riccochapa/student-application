@@ -10,7 +10,7 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
     id: req.user.id
   }, function(err, profile) {
   if (!profile)
-    res.redirect('/profile/create');
+    res.redirect('/profile/welcome');
   else
     res.render('home', {
       profile: profile,
