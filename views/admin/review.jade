@@ -1,45 +1,46 @@
 extends ../layout
 
 block content
-
-  div  
-    nav.navbar.navbar-fixed-top
-      .container
+  header
+  nav.navbar.navbar-fixed-top
+    .container-fluid
       .navbar-header
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/home') (boot)(up)
-        #myNavbar.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href='/admin') HOME
-        li
-          a(href='/admin/accepted') ACCEPTED  
-        li
-          a(href='/admin/waitlisted') WAITLISTED
-        li
-          a(href='/admin/alternative') ALTERNATIVE  
-        li
-          a(href='/logout') LOGOUT
-        br
-        
+        button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#myNavbar' aria-expanded='false')
+          span.sr-only Toggle Navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/home') (boot)(up)
+      #myNavbar.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li.active
+            a(href='/admin') HOME
+            span.sr-only(current)
+          li.active
+            a(href='/admin/accepted') ACCEPTED
+            span.sr-only(current) 
+          li.active
+            a(href='/admin/waitlisted') WAITLIST
+            span.sr-only(current)
+          li.active
+            a(href='/admin/alternative') ALTERNATIVE
+            span.sr-only(current) 
+          li.active
+            a(href='/logout') LOGOUT
+            span.sr-only(current)
+            
+  br    
   div#belownav
-  
   div
+    br
     each section in profile
-      br
-      h1 applicant review
+      h1.mini applicant review
       h2 #{section.name.firstName} #{section.name.lastName}
       h3 
       h4#red #{section.application.status}
-      
+      br    
   div#applicantreview
   br
-  br
-  br
-  
   div.row
   
     div.col-md-4#adminreview
@@ -80,8 +81,7 @@ block content
             button.btn.btn-default#adminbutton(type="submit") UNDER REVIEW
             br    
               
-    div.col-md-8#adminreviewquestionaire
-      br
+    div.col-md-8#adminreview
       form(method="post")
       .form-group   
       each responses in questionaire
@@ -117,7 +117,7 @@ block content
       | notes:          
       textarea.form-control#exampleTextarea(rows="6")
       br      
-      input.btn.btn-default#adminreviewbutton(type="submit")
+      input.btn.btn-default#adminsubmit(type="submit")
       br
       br
       br

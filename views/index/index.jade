@@ -25,12 +25,10 @@ html(lang='en')
         .cover-container
           .masthead.clearfix
             .inner
-            nav.nav.nav-masthead
-              a.nav-link.active(href='/') 
-                i.fa.fa-desktop(aria-hidden="true")    
+            nav.nav.nav-masthead  
               a.nav-link(href='/boot') what is (boot)?
               a.nav-link(href='/codergv') what is code[rgv]?
-              a.nav-link(onclick="signin()") login
+              a.nav-link(onclick="signin()") apply | login
        
                 script.
                   var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}', { auth: {
@@ -43,6 +41,7 @@ html(lang='en')
                   function signin() {
                     lock.show();
                   }
+
                   
         .inner.cover
           h1.cover-heading (boot)(up)
@@ -54,26 +53,12 @@ html(lang='en')
             h3 var methodOverride = require('method-override');
             h3 var localStrategy = require('passport-local').Strategy;
           p.lead
-               
+          
           .mastfoot
           
-    footer.footer
-      .container
-        span.text-muted 
-          a.btn#apply(onclick="signin()")
-            | apply for spring 2017
-
-            script.
-              var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}', { auth: {
-                    redirectUrl: '#{env.AUTH0_CALLBACK_URL}'
-                  , responseType: 'code'
-                  , params: {
-                    scope: 'openid name email picture'
-                  }
-                }});
-              function signin() {
-                lock.show();
-              }
+              footer.footer
+                .container
+                  span.text-muted
 
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js', integrity='sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY', crossorigin='anonymous')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/js/jquery.min.js', integrity='sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB', crossorigin='anonymous')

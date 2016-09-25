@@ -18,16 +18,16 @@ body {
 }
 
 body {
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
   margin-bottom: 60px;
   width: 100%;
 }
 
 #apply:hover{
-  width: 100%;
-  color: black;
-  text-shadow: 0 .05rem .5rem rgba(0,0,0,.3);
-  background-color: transparent;
+  width: 300px;
+}
+
+#apply{
+  width: 200px;
 }
 
 .site-wrapper {

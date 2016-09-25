@@ -4,7 +4,7 @@ block content
   div
     div#submit.slide
       br
-      h1#questionaire submitted application
+      h1.easy#questionaire submitted application
       br
       each response in questionaire.question
         ul
@@ -15,6 +15,6 @@ block content
           .panel-body
             h5.panel-title #{response.response}
         br
-        a.btn.btn-default#profilebutton(href='/questionaire/edit/#{response.number}') edit response
+        a.btn.btn-default#profilebutton.easy(href='/questionaire/edit/#{response.number}') edit response
         br
         br

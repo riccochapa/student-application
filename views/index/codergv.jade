@@ -30,7 +30,7 @@ html(lang='en')
                 i.fa.fa-desktop(aria-hidden="true")        
               a.nav-link(href='/boot') what is (boot)?
               a.nav-link(href='/codergv') what is code[rgv]?
-              a.nav-link(onclick="signin()") login
+              a.nav-link(onclick="signin()") apply | login
        
                 script.
                   var lock = new Auth0Lock('#{env.AUTH0_CLIENT_ID}', '#{env.AUTH0_DOMAIN}', { auth: {

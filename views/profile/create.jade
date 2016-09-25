@@ -1,66 +1,71 @@
 extends ../layout
 
 block content
-  head
-    nav.navbar.navbar-fixed-top
-      .container
+  header
+  nav.navbar.navbar-fixed-top
+    .container-fluid
       .navbar-header
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/admin') (boot)(up)
-        #myNavbar.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href='/home') HOME
-        li
-          a(href='/profile') PROFILE  
-        li
-          a(href='/application') APPLICATION
-        li
-          a(href='/application/status') STATUS  
-        li
-          a(href='/logout') LOGOUT
-        br
-        br
-    div#belownav
-    div
+        button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#myNavbar' aria-expanded='false')
+          span.sr-only Toggle Navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/admin') (boot)(up)
+      #myNavbar.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li.active
+            a(href='/home') HOME
+            span.sr-only(current)
+          li.active
+            a(href='/profile') PROFILE
+            span.sr-only(current) 
+          li.active
+            a(href='/application') APPLICATION
+            span.sr-only(current)
+          li.active
+            a(href='/application/status') STATUS
+            span.sr-only(current) 
+          li.active
+            a(href='/logout') LOGOUT
+            span.sr-only(current)
+            
+  div#belownav
+  div
+  br
+  div#profile.container.slide
     br
-    div#profile.container.slide
-      br
-      br
-      h2.easy profile
-      br
-      br
-      form(action"", method="post")
-        div.col-md-4
-          input.input.group(type="text", class="form-control", placeholder="name", name="name[firstName]", value=profile.name.firstName)
-          br
-          input.input.group(type="text", class="form-control", placeholder="email", name="contact[email]", value=profile.contact.email)
-          br
-          input.input.group(type="text", class="form-control", placeholder="age (optional)", name="demographics[age]", value=profile.demographics.age)
-          br
-          input.input.group(type="text", class="form-control", placeholder="https://github.com/(you)", name="social[github]", value=profile.social.github)
-          br
-        div.col-md-4
-          input.input.group(type="text", class="form-control", placeholder="last name", name="name[lastName]", value=profile.name.lastName)
-          br
-          input.input.group(type="text", class="form-control", placeholder="phone", name="contact[phone]", value=profile.contact.phone)
-          br
-          input.input.group(type="text", class="form-control", placeholder="gender (optional)", name="demographics[gender]", value=profile.demographics.gender)
-          br
-          input.input.group(type="text", class="form-control", placeholder="https://facebook.com/(you)" name="social[facebook]", value=profile.social.facebook)
-          br
-        div.col-md-4  
-          input.input.group(type="text", class="form-control", placeholder="preferred name", name="name[preferredName]", value=profile.name.preferredName)
-          br
-          input.input.group(type="text", class="form-control", placeholder="street address, city, state and zip", name="contact[address]", value=profile.contact.address)
-          br
-          input.input.group(type="text", class="form-control", placeholder="ethnicity (optional)", name="demographics[ethnicity]", value=profile.demographics.ethnicity)
-          br
-          input.input.group(type="text", class="form-control", placeholder="https://twitter.com/(you)" name="social[twitter]" value=profile.social.twitter)
-          br
-          input.input.group(hidden, type="text", name="application[status]" value="pending submission")
-          br
-        input.btn.btn-default#profilebutton.slow(type="submit")
+    br
+    h2.mini.easy profile
+    br
+    br
+    form(action"", method="post")
+      div.col-md-4
+        input.input.group(type="text", class="form-control", placeholder="name", name="name[firstName]", value=profile.name.firstName)
+        br
+        input.input.group(type="text", class="form-control", placeholder="email", name="contact[email]", value=profile.contact.email)
+        br
+        input.input.group(type="text", class="form-control", placeholder="age (optional)", name="demographics[age]", value=profile.demographics.age)
+        br
+        input.input.group(type="text", class="form-control", placeholder="https://github.com/(you)", name="social[github]", value=profile.social.github)
+        br
+      div.col-md-4
+        input.input.group(type="text", class="form-control", placeholder="last name", name="name[lastName]", value=profile.name.lastName)
+        br
+        input.input.group(type="text", class="form-control", placeholder="phone", name="contact[phone]", value=profile.contact.phone)
+        br
+        input.input.group(type="text", class="form-control", placeholder="gender (optional)", name="demographics[gender]", value=profile.demographics.gender)
+        br
+        input.input.group(type="text", class="form-control", placeholder="https://facebook.com/(you)" name="social[facebook]", value=profile.social.facebook)
+        br
+      div.col-md-4  
+        input.input.group(type="text", class="form-control", placeholder="preferred name", name="name[preferredName]", value=profile.name.preferredName)
+        br
+        input.input.group(type="text", class="form-control", placeholder="street address, city, state and zip", name="contact[address]", value=profile.contact.address)
+        br
+        input.input.group(type="text", class="form-control", placeholder="ethnicity (optional)", name="demographics[ethnicity]", value=profile.demographics.ethnicity)
+        br
+        input.input.group(type="text", class="form-control", placeholder="https://twitter.com/(you)" name="social[twitter]" value=profile.social.twitter)
+        br
+        input.input.group(hidden, type="text", name="application[status]" value="pending submission")
+        br
+      input.btn.btn-default#profilebutton.slow(type="submit")
