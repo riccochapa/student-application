@@ -26,8 +26,29 @@ var Admin = require('../models/admin.js');
   });
 });
 
-/*
-router.post('/', ensureLoggedIn, function(req, res, next) {
+router.get('/welcomeadmin', ensureLoggedIn, function(req, res, next) {
+var Questionaire = require('../models/questionaire.js');
+var Profile = require('../models/profile.js');
+var Admin = require('../models/admin.js');
+  Admin.findOne({ id : req.user.id }, function (err, admin) {
+    Questionaire.find( function (err, questionaire) {
+      Profile.find( function (err, profile) {
+        if (!admin)
+        res.redirect('/home');
+        else
+        res.render('admin/welcomeadmin', {
+          profile: profile,
+          questionaire: questionaire,
+          admin: admin,
+          user: req.user
+        });
+      });
+    });
+  });
+});
+
+
+router.post('/welcomeadmin', ensureLoggedIn, function(req, res, next) {
   var Admin = require('../models/admin.js');
     Admin.findOne({
         id: req.user.id
@@ -43,12 +64,12 @@ router.post('/', ensureLoggedIn, function(req, res, next) {
         }
         admin.save(function(err) {
             if (err) return next(err);
-            res.redirect('/admin/index');
+            res.redirect('/admin');
         });
     });
 
 });
-*/
+
 
 router.get('/review/:applicantid', ensureLoggedIn, function(req, res, next) {
 var Questionaire = require('../models/questionaire.js');

@@ -5,7 +5,7 @@ body{
   font-weight: 100;
   background-color: black;
   color: #FFF;
-  padding-bottom: 13px;
+
   padding-right: 3%;
   padding-left: 3%;
 }
@@ -42,7 +42,6 @@ canvas{
 #application{
   padding: 3%;
   margin-top: 25px;
-  color: white;
 }
 
 #belownav{
@@ -67,10 +66,6 @@ canvas{
   width: 100%;
   margin-right: 43%;
   margin-left: 43%;
-}
-
-.container-fluid#home#home{
-  height: 100%;
 }
 
 #one{
@@ -124,6 +119,14 @@ canvas{
   padding: 13%;
 }
 
+#test{
+  border-style: solid;
+  border-width: thick;
+  border-color: red;
+  height: 100%;
+  width: 666px;
+}
+
 #questionaire{
   color: white;
 }
@@ -131,6 +134,10 @@ canvas{
 #words{
   background:#141414;
   overflow:hidden;
+}
+
+.container-fluid#home{
+  height: 100%;
 }
 
 .panel-body{
@@ -160,7 +167,7 @@ canvas{
 
 .navbar-nav li a:hover{
   color: red;
-  background-color: transparent;;
+  background-color: transparent;
 }
 
 .navbar-toggle{
@@ -172,6 +179,23 @@ footer .glyphicon {
     margin-bottom: 20px;
     color: #f4511e;
 }
+
+.dashboard{
+  height: 100%;
+  width: 100%;
+}
+
+.surround{
+  height: 200px;
+  width: 33%;
+  border-style: solid;
+  border-width: thick;
+  border-color: black;
+  border-radius: 9px;
+  background-color: white;
+  padding: 1%;
+}
+
 .slideanim{
   visibility:hidden;
 }
@@ -263,5 +287,14 @@ footer .glyphicon {
   }
   iframe{
     width: 100%;
+  }
+  .surround{
+    height: 200px;
+    width: 100%;
+    border-style: solid;
+    border-width: thick;
+    border-color: black;
+    background-color: white;
+    padding: 1%;
   }
 }

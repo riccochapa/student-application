@@ -17,19 +17,6 @@ body {
   text-align: center;
 }
 
-body {
-  margin-bottom: 60px;
-  width: 100%;
-}
-
-#apply:hover{
-  width: 300px;
-}
-
-#apply{
-  width: 200px;
-}
-
 .site-wrapper {
   display: table;
   width: 100%;
@@ -51,8 +38,12 @@ body {
 .inner {
   text-align: left;
   padding: 2rem;
-  margin-left: 25%;
-  margin-right: 5%;
+}
+
+.center{
+text-align: left;
+margin-left: 25%;
+margin-right: 5%;
 }
 
 .masthead {

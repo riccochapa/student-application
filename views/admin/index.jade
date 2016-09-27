@@ -39,7 +39,7 @@ block content
   br
   br
   br
-  div
+  div.dashboard
     div.row
       div.col-md-4
         h3 pending review
@@ -53,7 +53,18 @@ block content
                   dt #{applicant.name.firstName} #{applicant.name.lastName}
                   br
                   a.btn.btn-xs.btn-default#adminsubmit(href='/admin/review/#{applicant.id}') REVIEW
-                  br
-                
+                  br      
       div.col-md-8
-        h3 applicant dashboard
+        div.container-fluid
+          h3 applicant dashboard
+          br
+          div.row
+            div.col-md-4.surround
+            div.col-md-4.surround
+            div.col-md-4.surround
+          div.row
+            div.col-md-4.surround
+            div.col-md-4.surround
+            div.col-md-4.surround
+        
+        

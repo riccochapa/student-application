@@ -2,19 +2,18 @@ extends ../layout
 
 block content
   div
-    div#submit.slide
+  div#submit
+    h1.easy#questionaire submitted application
+    br
+    each response in questionaire.question
+      ul
       br
-      h1.easy#questionaire submitted application
+      .panel.panel-default.slide
+        .panel-heading
+          h3.panel-title #{response.statement}
+        .panel-body
+          h5.panel-title #{response.response}
       br
-      each response in questionaire.question
-        ul
-        br
-        .panel.panel-default
-          .panel-heading
-            h3.panel-title #{response.statement}
-          .panel-body
-            h5.panel-title #{response.response}
-        br
-        a.btn.btn-default#profilebutton.easy(href='/questionaire/edit/#{response.number}') edit response
-        br
-        br
+      a.btn.btn-default#profilebutton.easy(href='/questionaire/edit/#{response.number}') edit response
+      br
+      br
