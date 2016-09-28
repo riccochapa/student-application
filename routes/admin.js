@@ -33,8 +33,8 @@ var Admin = require('../models/admin.js');
   Admin.findOne({ id : req.user.id }, function (err, admin) {
     Questionaire.find( function (err, questionaire) {
       Profile.find( function (err, profile) {
-        if (!admin)
-        res.redirect('/home');
+        if (admin)
+        res.redirect('/admin');
         else
         res.render('admin/welcomeadmin', {
           profile: profile,

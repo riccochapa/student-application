@@ -60,11 +60,88 @@ block content
           br
           div.row
             div.col-md-4.surround
+              - var total = 0;
+                each appStat in profile
+                  - var number = [];
+                  - var stat = appStat.application.status
+                  - if (stat == "under review"){
+                  -  number.push(appStat.name.firstName)
+                  - }
+                  - if (number.length == true){
+                  -  total += 1;
+                  - }  
+                br
+                h1#red #{total}
+                h5#red pending review
             div.col-md-4.surround
+              - var total = 0;
+                each applicant in profile
+                  - var number = [];
+                  - var stat = applicant.id
+                  - if (stat){
+                  -  number.push(applicant.id)
+                  - }
+                  - if (number.length == true){
+                  -  total += 1;
+                  - } 
+                br
+                h2#red #{total} 
+                h5#red profiles
             div.col-md-4.surround
+              - var total = 0;
+                each applicant in questionaire
+                  - var number = [];
+                  - var stat = applicant.id
+                  - if (stat){
+                  -  number.push(applicant.id)
+                  - }
+                  - if (number.length == true){
+                  -  total += 1;
+                  - }  
+                br
+                h2#red #{total} 
+                h5#red questionaires        
           div.row
             div.col-md-4.surround
+              - var total = 0;
+                each appStat in profile
+                  - var number = [];
+                  - var stat = appStat.application.status
+                  - if (stat == "accepted"){
+                  -  number.push(appStat.name.firstName)
+                  - }
+                  - if (number.length == true){
+                  -  total += 1;
+                  - }  
+                br
+                h1#red #{total}
+                h5#red accepted
             div.col-md-4.surround
+              - var total = 0;
+                each appStat in profile
+                  - var number = [];
+                  - var stat = appStat.application.status
+                  - if (stat == "waitlist"){
+                  -  number.push(appStat.name.firstName)
+                  - }
+                  - if (number.length == true){
+                  -  total += 1;
+                  - }  
+                br
+                h1#red #{total}
+                h5#red waitlisted
             div.col-md-4.surround
-        
-        
+              - var total = 0;
+                each appStat in profile
+                  - var number = [];
+                  - var stat = appStat.application.status
+                  - if (stat == "alternative track"){
+                  -  number.push(appStat.name.firstName)
+                  - }
+                  - if (number.length == true){
+                  -  total += 1;
+                  - }  
+                br
+                h1#red #{total}
+                h5#red alternative track
+          
