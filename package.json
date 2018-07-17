@@ -39,7 +39,7 @@
     "pug": "^2.0.0-beta6",
     "serve-favicon": "~2.3.0",
     "session": "^0.1.0",
-    "uglify-js": "2.4.24"
+    "uglify-js": "2.6.0 "
   },
   "devDependencies": {
     "express-livereload": "0.0.24",
